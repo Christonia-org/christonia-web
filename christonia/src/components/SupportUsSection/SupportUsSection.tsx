@@ -8,7 +8,7 @@ export default function SupportUsSection() {
         Christonia is funded by the community. 
         Join us in empowering Christians around the globe by supporting Christonia!
       </p>
-      <div>
+      <div className={styles.buttonContainer}>
         <button className={styles.learnMoreButton}>
             Learn more
         </button>
