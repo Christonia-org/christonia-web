@@ -1,0 +1,61 @@
+.supportUsSection {
+  background-color: #1A2645;
+  color: #fff;
+  padding: 4rem 2rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.25rem;
+  width: 60%;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.learnMoreButton,
+.donateButton {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learnMoreButton {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.learnMoreButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.donateButton {
+  background-color: oklch(60% 0.118 184.704);
+  color: #fff;
+  border: 2px solid oklch(60% 0.118 184.704);
+}
+
+.donateButton:hover {
+  background-color: oklch(51.1% 0.096 186.391);
+  border: 2px solid oklch(51.1% 0.096 186.391);
+}
