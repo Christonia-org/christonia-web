@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   color: white;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .logo {
-  height: 55px;
+  height: 65px;
   width: auto;
 }
 
@@ -40,6 +40,10 @@
   font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.navLink:hover {
+  text-decoration: underline;
 }
 
 .getStartedButton {

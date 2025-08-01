@@ -42,7 +42,7 @@
 .learnMoreButton {
   background-color: transparent;
   color: #fff;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
 }
 
 .learnMoreButton:hover {
