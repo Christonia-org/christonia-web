@@ -1,3 +1,4 @@
+import Link from 'next/dist/client/link';
 import styles from './SupportUsSection.module.css';
 
 export default function SupportUsSection() {
@@ -9,12 +10,12 @@ export default function SupportUsSection() {
         Join us in empowering Christians around the globe by supporting Christonia!
       </p>
       <div className={styles.buttonContainer}>
-        <button className={styles.learnMoreButton}>
+        <Link href="/learn-more" className={styles.learnMoreButton}>
             Learn more
-        </button>
-        <button className={styles.donateButton}>
+        </Link>
+        <Link href="/donate" className={styles.donateButton}>
             Donate now
-        </button>
+        </Link>
       </div>
     </section>
   );
