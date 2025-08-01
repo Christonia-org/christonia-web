@@ -1,0 +1,100 @@
+.howItWorksSection {
+  background-color: #202C39;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 2rem 2rem;
+}
+
+.title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #c9cdd4;
+  max-width: 60%;
+  margin: 0 auto 3.5rem;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  flex: 1 1 220px; 
+  max-width: 280px; 
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.subtitleDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #c9cdd4;
+}
+
+@media (max-width: 1024px) {
+  .cardsContainer {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .howItWorksSection {
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 350px;
+  }
+
+  .image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+}
