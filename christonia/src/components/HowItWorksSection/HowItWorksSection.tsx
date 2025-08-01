@@ -2,7 +2,7 @@ import styles from './HowItWorksSection.module.css';
 
 export default function HowItWorksSection() {
   return (
-    <section className="how-it-works-section">
+    <section className={styles.howItWorksSection}>
       <h1 className={styles.title}>How it works</h1>
       <p className={styles.description}>
         This is the platform that connects you to the greatest Christian minds. 
