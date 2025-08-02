@@ -1,4 +1,4 @@
-.signUpForm {
+.signInForm {
   background-color: #263343;
   padding: 2.5rem;
   border-radius: 12px;
@@ -38,17 +38,59 @@
   border-color: #c4d7ed;
 }
 
-.terms {
+.forgotPasswordGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.9rem;
-  color: #c9cdd4;
-  text-align: center;
-  margin: 0.5rem 0 0.5rem 0; 
+  margin-top: -0.75rem; 
 }
 
-.signUpForm button[type="submit"] {
-  background-color: oklch(60% 0.118 184.704);
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rememberMe input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #4a5a75;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #304156;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.rememberMe input[type="checkbox"]:checked {
+  background-color: oklch(60% 0.118 184.704); 
+  border-color: oklch(60% 0.118 184.704);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 12.6111L8.92308 17.5L20 6.5' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.rememberMe label {
+  font-size: 0.9rem;
+  color: #c9cdd4;
+}
+
+.forgotPasswordLink {
   color: #fff;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.signInForm button[type="submit"] {
+  background-color: oklch(60% 0.118 184.704);
+  color: #DADADA;
   font-size: 1rem;
+  font-weight: 500;
   border: none;
   border-radius: 6px;
   padding: 0.75rem;
@@ -56,7 +98,7 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-.signUpForm button[type="submit"]:hover {
+.signInForm button[type="submit"]:hover {
   background-color: oklch(51.1% 0.096 186.391);
 }
 
@@ -85,12 +127,11 @@
   background-color: #17223D;
   border: 1px solid #4a5a75;
   border-radius: 6px;
-  padding: 0.25rem;
+  padding: 0;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem; 
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -101,10 +142,4 @@
 
 .googleButton:hover {
   background-color: rgba(255, 255, 255, 0.05);
-}
-
-.googleButton span {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
 }
