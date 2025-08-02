@@ -1,0 +1,97 @@
+.contactUsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #17223D;
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.contactUsSection p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 50%;
+  color: #c9cdd4;
+  margin-bottom: 1.5rem;
+}
+
+.emailLink {
+  color: #c9cdd4;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+.emailLink:hover {
+  color: #fff;
+}
+
+.discordLink {
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.discordLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contactUsSection div {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.contributeLink,
+.donateLink {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background-color: oklch(60% 0.118 184.704);
+}
+
+.contributeLink:hover,
+.donateLink:hover {
+  background-color: oklch(51.1% 0.096 186.391);
+}
+
+@media (max-width: 768px) {
+  .contactUsSection {
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .contactUsSection div {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contributeLink,
+  .donateLink {
+    width: 100%;
+    max-width: 250px;
+  }
+}
