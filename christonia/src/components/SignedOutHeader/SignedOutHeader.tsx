@@ -10,13 +10,13 @@ export default function SignedOutHeader() {
       </div>
       <nav>
         <ul className={styles.navList}>
-            <li><Link href={"#"} className={styles.navLink}>All Paths</Link></li> 
-            <li><Link href={"#"} className={styles.navLink}>About</Link></li>
-            <li><Link href={"#"} className={styles.navLink}>Glossary</Link></li>
-            <li><Link href={"#"} className={styles.navLink}>Support us</Link></li>
-            <li><Link href={"#"} className={styles.navLink}>Sign in</Link></li>
+            <li><Link href={"/all-paths"} className={styles.navLink}>All Paths</Link></li> 
+            <li><Link href={"/about"} className={styles.navLink}>About</Link></li>
+            <li><Link href={"/glossary"} className={styles.navLink}>Glossary</Link></li>
+            <li><Link href={"/support"} className={styles.navLink}>Support us</Link></li>
+            <li><Link href={"/sign-in"} className={styles.navLink}>Sign in</Link></li>
             <li><img src="./moon.svg" alt="Change theme button" className={styles.themeIcon} /></li> 
-            <li><Link href={"#"} className={styles.getStartedButton}>Get Started</Link></li>
+            <li><Link href={"/sign-up"} className={styles.getStartedButton}>Get Started</Link></li>
         </ul>
       </nav>
     </header>
