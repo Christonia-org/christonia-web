@@ -65,7 +65,7 @@ export default function FaqSection() {
         <h3 className={styles.question}>I still have questions. How can I contact you?</h3>
         <p className={styles.answer}>
           You can contact us through modmail on our discord server, or through email. 
-          See our <Link href="/contact" className={styles.link}>contact us</Link> page for details.
+          See our <Link href="/about#contact-us" className={styles.link}>contact us</Link> page for details.
         </p>
       </div>
     </section>

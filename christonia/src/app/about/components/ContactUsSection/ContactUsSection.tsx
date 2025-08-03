@@ -3,7 +3,7 @@ import styles from './ContactUsSection.module.css';
 
 export default function ContactUsSection() {
   return (
-    <section className={styles.contactUsSection}>
+    <section className={styles.contactUsSection} id='contact-us'>
       <h3 className={styles.title}>Want to contact us?</h3>
       <p>
         Connect with our friendly community on discord, a chat and networking 
