@@ -13,7 +13,7 @@ export default function SupportUsSection() {
         <Link href="/learn-more" className={styles.learnMoreButton}>
             Learn more
         </Link>
-        <Link href="/donate" className={styles.donateButton}>
+        <Link href="/support-us" className={styles.donateButton}>
             Donate now
         </Link>
       </div>
