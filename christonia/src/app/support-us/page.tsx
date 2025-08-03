@@ -1,9 +1,10 @@
 import styles from './page.module.css';
 import Link from 'next/link';
+import FaqSection from './components/FaqSection/FaqSection';
 
 export default function SupportUsPage() {
   return (
-    <>
+    <div className={styles.supportUsPage}>
         <section className={styles.supportUsSection}>
         <h1 className={styles.title}>Support Us</h1>
         <p className={styles.description}>
@@ -14,6 +15,7 @@ export default function SupportUsPage() {
         </p>
         <Link href="#" className={styles.button}>Donate now!</Link>
         </section>
-    </>
+        <FaqSection />
+    </div>
   );
 }
