@@ -1,0 +1,80 @@
+.section {
+  background-color: #2F3F54;
+  color: #DADADA;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4rem;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  text-align: left;
+}
+
+.cardImage {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0; 
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c9cdd4;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardImage {
+    margin-bottom: 1rem;
+  }
+}
