@@ -14,21 +14,21 @@
   text-align: center;
   padding: 4rem 2rem;
   gap: 1.5rem;
-  background-color: #17223D; /* Slightly darker background to separate it visually */
+  background-color: #17223D; 
 }
 
 .contactTitle {
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
-  margin: 0; /* Remove default margin */
+  margin: 0; 
 }
 
 .contactDescription {
   font-size: 1rem;
   line-height: 1.6;
   color: #c9cdd4;
-  margin: 0; /* Remove default margin */
+  margin: 0; 
 }
 
 .contactLink {
@@ -46,6 +46,6 @@
 }
 
 .contactLink:hover {
-  background-color: #263343; /* Darker on hover */
-  border-color: #c4d7ed; /* A subtle border color change on hover */
+  background-color: #263343;
+  border-color: #c4d7ed;
 }
