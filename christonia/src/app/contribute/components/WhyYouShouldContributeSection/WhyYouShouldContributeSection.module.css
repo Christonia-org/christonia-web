@@ -7,7 +7,7 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 
 .title {
@@ -20,7 +20,7 @@
 .contentContainer {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
   max-width: 800px;
   width: 100%;
 }
