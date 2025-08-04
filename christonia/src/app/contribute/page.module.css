@@ -1,0 +1,60 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #263343; /* Adding background color for consistency */
+    min-height: 100vh; /* Ensures it covers the full viewport height */
+    color: #fff; /* Default text color for the page title */
+    font-family: sans-serif;
+}
+
+.page h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px; /* Limits the overall width of the card section */
+    /*
+     * We don't need height: max-content here.
+     * Flexbox's default align-items: stretch will make children equal height.
+     */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+    justify-content: center; /* Centers the cards when they wrap */
+    margin-bottom: 4rem; /* Add some space below the cards if needed */
+}
+
+/* Styles for individual cards within the container */
+.cardContainer > div { /* Target the ContributeCard component's div directly */
+    flex: 1; /* Allows cards to grow and shrink, taking equal width */
+    min-width: 300px; /* Ensures cards don't get too squished on medium screens */
+    max-width: 400px; /* Prevents cards from becoming too wide on large screens */
+}
+
+/* Media query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .page {
+        padding: 1rem;
+    }
+    
+    .page h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cardContainer {
+        flex-direction: column; /* Stacks the cards vertically */
+        align-items: center; /* Centers stacked cards */
+        gap: 1.5rem; /* Adjust gap for vertical stacking */
+    }
+
+    .cardContainer > div {
+        width: 100%; /* Make stacked cards take full width */
+        max-width: 400px; /* Constrain max width even when stacked */
+    }
+}
