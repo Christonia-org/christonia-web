@@ -39,7 +39,7 @@
   color: #fff;
 }
 
-.teamRoles .link {
+.teamRoles .link { 
   padding: 0.5rem 1rem;
   color: #fff;
   text-decoration: none;
@@ -52,9 +52,9 @@
 
 .teamRolesSection {
   width: 100%;
-  max-width: 1200px; 
-  margin-bottom: 4rem; 
-  padding-top: 2rem; 
+  max-width: 1200px;
+  margin-bottom: 2.5rem;
+  padding-top: 2rem;
 }
 
 .roleTitle {
@@ -70,15 +70,16 @@
   line-height: 1.6;
   color: #c9cdd4;
   margin-bottom: 2.5rem; 
-  max-width: 100%; 
+  max-width: 800px;
   text-align: left; 
 }
 
 .roleMembers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-  gap: 1.5rem; 
-  justify-items: center; 
+  grid-template-columns: repeat(auto-fill, 175px);
+  gap: 70px; 
+  justify-content: start; 
+  justify-items: start; 
 }
 
 @media (max-width: 1024px) {
@@ -87,7 +88,7 @@
     gap: 1rem;
   }
   .roleMembers {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, 175px); 
   }
 }
 
@@ -118,12 +119,16 @@
   }
 
   .roleMembers {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-template-columns: 1fr; 
+    justify-content: center; 
+    justify-items: center;
   }
 }
 
 @media (max-width: 480px) {
   .roleMembers {
     grid-template-columns: 1fr; 
+    justify-content: center; 
+    justify-items: center;
   }
 }
