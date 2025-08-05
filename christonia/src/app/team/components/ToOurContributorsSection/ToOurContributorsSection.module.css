@@ -1,0 +1,86 @@
+.toOurContributorsSection {
+  color: #DADADA; 
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  max-width: 800px; 
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #c9cdd4;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+}
+
+.quoteContainer {
+  background-color: transparent; 
+  padding: 1.5rem 0; 
+  margin-bottom: 2.5rem;
+  max-width: 700px; 
+  width: 100%;
+}
+
+.quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #c9cdd4; 
+  margin: 0; 
+}
+
+.quoteAuthor {
+  font-size: 1rem;
+  color: #c9cdd4;
+  margin-top: 0.5rem;
+  text-align: right;
+  width: 100%;
+}
+
+.link {
+  display: inline-block;
+  background-color: oklch(60% 0.118 184.704); 
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  border: 2px solid oklch(60% 0.118 184.704);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+.link:hover {
+  background-color: oklch(51.1% 0.096 186.391);
+  border-color: oklch(51.1% 0.096 186.391);
+}
+
+@media (max-width: 768px) {
+  .toOurContributorsSection {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .quote {
+    font-size: 1rem;
+  }
+}

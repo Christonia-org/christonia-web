@@ -1,0 +1,134 @@
+.meetTheTeamSection {
+  color: #DADADA; 
+  min-height: 100vh; 
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #c9cdd4;
+  margin-bottom: 2rem;
+}
+
+.teamRoles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem; 
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.teamRoles .link { 
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.teamRoles .link:hover {
+  color: #5AC4F6;
+}
+
+.teamRolesSection {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2.5rem;
+  padding-top: 2rem;
+}
+
+.roleTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: left; 
+}
+
+.roleDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #c9cdd4;
+  margin-bottom: 2.5rem; 
+  max-width: 800px;
+  text-align: left; 
+}
+
+.roleMembers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 175px);
+  gap: 70px; 
+  justify-content: start; 
+  justify-items: start; 
+}
+
+@media (max-width: 1024px) {
+  .teamRoles {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .roleMembers {
+    grid-template-columns: repeat(auto-fill, 175px); 
+  }
+}
+
+@media (max-width: 768px) {
+  .meetTheTeamSection {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .teamRoles {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .roleTitle {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .roleDescription {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .roleMembers {
+    grid-template-columns: 1fr; 
+    justify-content: center; 
+    justify-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .roleMembers {
+    grid-template-columns: 1fr; 
+    justify-content: center; 
+    justify-items: center;
+  }
+}
