@@ -1,4 +1,5 @@
 import styles from './MeetTheTeamSection.module.css';
+import Link from 'next/link';
 
 export default function MeetTheTeamSection() {  
     return (
@@ -7,14 +8,14 @@ export default function MeetTheTeamSection() {
                 <h1 className={styles.title}>Meet the Team</h1>
                 <p className={styles.description}>Christonia is run by a group of dedicated volunteers from around the world.</p>
                 <ul className={styles.teamRoles}>
-                    <li>Core</li>
-                    <li>Maintainers</li>
-                    <li>Moderators</li>
-                    <li>Alumni</li>
+                    <li><Link href="#core" className={styles.link}>Core</Link></li>
+                    <li><Link href="#maintainers" className={styles.link}>Maintainers</Link></li>
+                    <li><Link href="#moderators" className={styles.link}>Moderators</Link></li>
+                    <li><Link href="#alumni" className={styles.link}>Alumni</Link></li>
                 </ul>
             </div>
 
-            <div className={styles.teamRolesSection}>
+            <div className={styles.teamRolesSection} id='core'>
                 <h2 className={styles.roleTitle}>Core</h2>
                 <p className={styles.roleDescription}>
                     The Core team are long-serving members who have made significant contributions 
@@ -23,7 +24,7 @@ export default function MeetTheTeamSection() {
                 <div className={styles.roleMembers}></div>
             </div>
 
-            <div className={styles.teamRolesSection}>
+            <div className={styles.teamRolesSection} id='maintainers'>
                 <h2 className={styles.roleTitle}>Maintainers</h2>
                 <p className={styles.roleDescription}>
                     Maintainers look after Christonia. Some ensure any issues with the code are fixed, 
@@ -32,7 +33,7 @@ export default function MeetTheTeamSection() {
                 <div className={styles.roleMembers}></div>
             </div>
 
-            <div className={styles.teamRolesSection}>
+            <div className={styles.teamRolesSection} id='moderators'>
                 <h2 className={styles.roleTitle}>Moderators</h2>
                 <p className={styles.roleDescription}>
                     Moderators are responsible for looking after the Christonia community by monitoring 
@@ -41,7 +42,7 @@ export default function MeetTheTeamSection() {
                 <div className={styles.roleMembers}></div>
             </div>
 
-            <div className={styles.teamRolesSection}>
+            <div className={styles.teamRolesSection} id='alumni'>
                 <h2 className={styles.roleTitle}>Alumni</h2>
                 <p className={styles.roleDescription}>
                     We extend our gratitude to all our former team members. Their dedication and 
