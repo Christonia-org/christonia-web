@@ -1,0 +1,3 @@
+interface SignedInHeaderProps {
+  userProfilePicUrl?: string; 
+}

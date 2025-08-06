@@ -15,7 +15,6 @@ export default function SignedOutHeader() {
             <li><Link href={"/glossary"} className={styles.navLink}>Glossary</Link></li>
             <li><Link href={"/support-us"} className={styles.navLink}>Support us</Link></li>
             <li><Link href={"/sign-in"} className={styles.navLink}>Sign in</Link></li>
-            <li><img src="./moon.svg" alt="Change theme button" className={styles.themeIcon} /></li> 
             <li><Link href={"/sign-up"} className={styles.getStartedButton}>Get Started</Link></li>
         </ul>
       </nav>
