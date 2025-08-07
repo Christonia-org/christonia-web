@@ -15,6 +15,7 @@
   justify-content: space-between;
   transition: all 0.3s ease;
   overflow: hidden;
+  text-align: left;
 }
 
 .blogCard::before {
