@@ -1,0 +1,91 @@
+.blogsSection {
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2rem; 
+  color: #fff;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #304156;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 6rem;
+  margin-top: 0.5rem;
+  position: sticky;
+  top: 2rem;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.searchIcon {
+  width: 24px; 
+  height: 24px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #fff;
+  padding: 0.25rem 0;
+}
+
+.searchInput::placeholder {
+  color: #c9cdd4;
+}
+
+.blogsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; 
+  width: 100%;
+  max-width: 1200px; 
+  margin-bottom: 3rem; 
+}
+
+.loadMoreButton {
+  background-color: oklch(60% 0.118 184.704);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  width: 60%;
+  margin-bottom: 2rem;
+}
+
+.loadMoreButton:hover {
+  background-color: oklch(51.1% 0.096 186.391); 
+}
