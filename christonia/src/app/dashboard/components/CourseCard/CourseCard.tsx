@@ -3,18 +3,6 @@
 import styles from './CourseCard.module.css';
 import Image from 'next/image';
 
-interface CourseCardProps {
-  courseName: string;
-  courseTrack?: string | null;
-  courseImageLink: string;
-  lessonsCompleted: number;
-  totalLessons: number;
-  blogsPublished: number;
-  totalBlogs: number;
-  quizScore: number;
-  totalQuizScore: number;
-}
-
 export default function CourseCard({
   courseName,
   courseTrack,
