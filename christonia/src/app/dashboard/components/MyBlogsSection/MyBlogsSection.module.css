@@ -1,0 +1,12 @@
+.myBlogsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: #fff;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+}
