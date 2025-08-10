@@ -20,7 +20,7 @@ export default function SignedInHeader({ userProfilePicUrl }: SignedInHeaderProp
             <li><Link href={"/support-us"} className={styles.navLink}>Support us</Link></li>
             <li><Link href={"/blogs"} className={styles.navLink}>Blogs</Link></li>
             <li>
-                <Link href={"/profile"} className={styles.profilePhoto}>
+                <Link href={"/profile/user-info"} className={styles.profilePhoto}>
                   <Image 
                     src={userProfilePicUrl || "/profile-icon.svg"}
                     alt="Profile Image" 
