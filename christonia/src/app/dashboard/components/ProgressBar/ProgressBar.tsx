@@ -1,11 +1,6 @@
 import React from 'react';
 import styles from './ProgressBar.module.css';
 
-interface ProgressBarProps {
-  currentValue: number;
-  maxValue: number;
-}
-
 export default function ProgressBar({ currentValue, maxValue }: ProgressBarProps) {
   const percentage = (currentValue / maxValue) * 100;
 

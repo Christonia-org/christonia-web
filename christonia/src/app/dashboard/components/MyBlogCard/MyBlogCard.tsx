@@ -1,18 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './MyBlogCard.module.css'
 import Link from 'next/link';
-import Image from 'next/image';
-
-interface MyBlogCardProps {
-  title: string;
-  author: string;
-  datePublished: string;
-  dateEdited: string | null;
-  likes: number;
-  description: string;
-}
 
 export default function MyBlogCard({
   title,
