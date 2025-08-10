@@ -14,6 +14,30 @@ export default function MyBlogsSection() {
                     likes={10}
                     description="This is a sample blog post."
                  />
+                 <MyBlogCard
+                    title="Blog 2"
+                    author="John Doe"
+                    datePublished="2023-06-01"
+                    dateEdited="2023-06-05"
+                    likes={10}
+                    description="This is a sample blog post."
+                 />
+                 <MyBlogCard
+                    title="Blog 3"
+                    author="John Doe"
+                    datePublished="2023-06-01"
+                    dateEdited="2023-06-05"
+                    likes={10}
+                    description="This is a sample blog post. This is a sample blog post. This is a sample blog post. This is a sample blog post."
+                 />
+                 <MyBlogCard
+                    title="Blog 4"
+                    author="John Doe"
+                    datePublished="2023-06-01"
+                    dateEdited="2023-06-05"
+                    likes={10}
+                    description="This is a sample blog post."
+                 />
             </div>
         </section>
     );

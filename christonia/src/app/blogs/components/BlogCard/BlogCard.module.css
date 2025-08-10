@@ -1,7 +1,7 @@
 .blogCard {
   position: relative;
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
+  height: 380px;
   background-color: #2F3F54;
   color: #fff;
   border-radius: 8px;
@@ -61,7 +61,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   padding-right: 2.5rem;
 }
 
@@ -110,6 +110,7 @@
   transition: background-color 0.2s ease;
   border: none;
   cursor: pointer;
+  align-self: center;
 }
 
 .readNowButton:hover {
