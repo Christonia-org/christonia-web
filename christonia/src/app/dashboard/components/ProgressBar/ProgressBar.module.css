@@ -1,0 +1,29 @@
+.progressBar {
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.progressBarValue {
+  color: white;
+  font-size: 1.25rem; 
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.progressBarFill {
+  background-color: #BCBCBC;
+  border-radius: 9999px; 
+  height: 1.25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progressBarFillInner {
+  background-color: #389B85; 
+  height: 100%;
+  border-radius: 9999px; 
+  transition: width 0.3s ease-in-out;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

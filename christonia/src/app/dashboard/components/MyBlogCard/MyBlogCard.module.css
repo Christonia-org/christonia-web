@@ -1,6 +1,7 @@
 .blogCard {
   position: relative;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 380px;
   background-color: #2F3F54;
   color: #fff;
@@ -36,21 +37,48 @@
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.bookmarkIcon {
-  position: absolute;
-  top: 1.5rem; 
-  right: 1rem;
-  cursor: pointer;
-  color: #a3a3a3;
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
   transition: color 0.2s ease;
 }
 
-.bookmarkIcon:hover {
-  color: #fff;
+.editIcon, .deleteIcon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: #b6b6b6;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
-.bookmarkChecked {
-  color: #a3a3a3;
+.editIcon {
+  -webkit-mask-image: url('/edit.svg');
+  mask-image: url('/edit.svg');
+}
+
+.deleteIcon {
+  -webkit-mask-image: url('/garbage.svg');
+  mask-image: url('/garbage.svg');
+  width: 27px;
+  height: 27px;
+}
+
+.editIcon:hover {
+  background-color: white;
+}
+
+.deleteIcon:hover {
+  background-color: red;
 }
 
 .content {
@@ -61,6 +89,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.25;
+  margin-top: 0.5rem;
   margin-bottom: 0.75rem;
   padding-right: 2.5rem;
 }
