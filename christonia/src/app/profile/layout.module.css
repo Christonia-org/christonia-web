@@ -2,7 +2,8 @@
   display: flex;
   min-height: calc(100vh - var(--header-height, 64px));
   color: #fff;
-  padding: 1rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
   gap: 1.5rem;
   align-items: flex-start;
 }
@@ -10,7 +11,7 @@
 .sidebar {
   border-radius: 8px;
   padding: 1.5rem 0;
-  width: 250px;
+  width: 350px;
   flex-shrink: 0;
 }
 
