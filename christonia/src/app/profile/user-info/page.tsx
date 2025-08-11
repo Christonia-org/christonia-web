@@ -5,7 +5,12 @@ import DangerZoneSection from "./components/DangerZoneSection/DangerZoneSection"
 export default function UserProfilePage() {
   return (
     <div className={styles.page}>
-      <ProfileInfoForm />
+      <ProfileInfoForm
+        name="John Doe"
+        email="jdoe@me.com"
+        aboutMe={null}
+        pfpLink={null}
+      />
       <DangerZoneSection />
     </div>
   );

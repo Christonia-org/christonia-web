@@ -4,9 +4,16 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./ProfileInfoForm.module.css";
 
-export default function ProfileInfoForm() {
+export default function ProfileInfoForm({
+  name,
+  email,
+  aboutMe,
+  pfpLink,
+}: ProfileFormProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [profileImageUrl, setProfileImageUrl] = useState("/profile-icon.svg");
+  const [profileImageUrl, setProfileImageUrl] = useState(
+    pfpLink || "/profile-icon.svg"
+  );
 
   const handlePictureClick = () => {
     fileInputRef.current?.click();
@@ -78,6 +85,7 @@ export default function ProfileInfoForm() {
           id="username"
           name="username"
           className={styles.formInput}
+          defaultValue={name}
         />
       </div>
 
@@ -90,6 +98,7 @@ export default function ProfileInfoForm() {
           id="email"
           name="email"
           className={styles.formInput}
+          defaultValue={email}
         />
       </div>
 
@@ -97,7 +106,12 @@ export default function ProfileInfoForm() {
         <label htmlFor="aboutMe" className={styles.formLabel}>
           About Me
         </label>
-        <textarea id="aboutMe" name="aboutMe" className={styles.formTextarea} />
+        <textarea
+          id="aboutMe"
+          name="aboutMe"
+          className={styles.formTextarea}
+          defaultValue={aboutMe || ""}
+        />
       </div>
 
       <button type="submit" className={styles.saveButton}>
