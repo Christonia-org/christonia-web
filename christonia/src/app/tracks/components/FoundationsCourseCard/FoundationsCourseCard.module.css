@@ -3,8 +3,9 @@
   color: #fff;
   border-radius: 8px;
   padding: 24px 50px;
-  max-width: 1050px;
+  max-width: 1200px;
   border: 1px solid #6b6b6b;
+  box-sizing: border-box;
 }
 
 .cardHeader {
@@ -28,12 +29,12 @@
 
 .right {
   display: flex;
-  gap: 12px;
+  gap: 20px;
 }
 
 .selectButton,
 .openButton {
-  padding: 10px 35px;
+  padding: 12px 40px;
   border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
@@ -42,7 +43,8 @@
   display: inline-block;
   text-align: center;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-family: "Arial";
 }
 
 .selectButton {
