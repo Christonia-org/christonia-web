@@ -21,8 +21,8 @@ export default function SignedInHeader({
             </Link>
           </li>
           <li>
-            <Link href={"/paths"} className={styles.navLink}>
-              All Paths
+            <Link href={"/tracks"} className={styles.navLink}>
+              All Tracks
             </Link>
           </li>
           <li>

@@ -11,8 +11,8 @@ export default function SignedOutHeader() {
       <nav>
         <ul className={styles.navList}>
           <li>
-            <Link href={"/paths"} className={styles.navLink}>
-              All Paths
+            <Link href={"/tracks"} className={styles.navLink}>
+              All Tracks
             </Link>
           </li>
           <li>

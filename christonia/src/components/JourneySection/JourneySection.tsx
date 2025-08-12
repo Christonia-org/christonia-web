@@ -12,7 +12,7 @@ export default function JourneySection() {
         Get access to a free Christian theology curriculum supported by a
         passionate community
       </p>
-      <Link href="/paths" className={styles.link}>
+      <Link href="/tracks" className={styles.link}>
         View Full Curriculum
       </Link>
     </section>
