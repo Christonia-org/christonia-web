@@ -20,7 +20,7 @@
 }
 
 .highlight {
-  color: #E1A90F;
+  color: #e1a90f;
 }
 
 .description {
@@ -33,7 +33,7 @@
 
 .link {
   display: inline-block;
-  padding: 1rem 0.5rem;
+  padding: 1rem 2rem;
   border: 1px solid #fff;
   border-radius: 8px;
   text-decoration: none;

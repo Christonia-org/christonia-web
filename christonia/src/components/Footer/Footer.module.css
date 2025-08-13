@@ -1,5 +1,5 @@
 .footer {
-  background-color: #17223D;
+  background-color: #17223d;
   color: #fff;
   padding: 2rem 4rem;
   font-family: sans-serif;
@@ -36,6 +36,8 @@
   font-size: 1.75rem;
   font-weight: 700;
   margin: 0;
+  color: #fff;
+  text-decoration: none;
 }
 
 .description {
@@ -69,9 +71,9 @@
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .columnTitle {
