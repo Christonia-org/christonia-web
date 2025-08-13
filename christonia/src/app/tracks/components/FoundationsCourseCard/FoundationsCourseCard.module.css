@@ -21,6 +21,12 @@
   gap: 20px;
 }
 
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .courseName {
   font-size: 1.8rem;
   font-weight: 600;
@@ -79,4 +85,14 @@
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
+}
+
+.selectedLabel {
+  background-color: oklch(60% 0.118 184.704);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
 }

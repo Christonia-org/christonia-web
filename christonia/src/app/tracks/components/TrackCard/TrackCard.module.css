@@ -47,7 +47,8 @@
 
 .buttonContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 30px;
   width: 100%;
   margin-top: auto;
   font-family: "Arial";
@@ -85,4 +86,21 @@
 .openButton:hover {
   background-color: #34495e;
   color: white;
+}
+
+.imageContainer {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.selectedLabel {
+  position: absolute;
+  right: -120px;
+  background-color: oklch(60% 0.118 184.704);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 9999px;
 }

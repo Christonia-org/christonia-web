@@ -3,37 +3,52 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function TrackCard({
-  trackName,
-  trackImageLink,
-  trackDescription,
-  trackLink,
-  trackCourseCount,
-  isTrackSelected,
-  isTrackCompleted,
+  name,
+  imageLink,
+  description,
+  link,
+  courseCount,
+  id,
+  isSelected,
+  onSelect,
 }: TrackCardProps) {
   return (
-    <div className={styles.trackCard}>
-      <Image
-        src={trackImageLink || "default-course-logo.svg"}
-        alt={`${trackName} Track Logo`}
-        width={90}
-        height={90}
-      />
+    <div className={`${styles.trackCard} ${isSelected ? styles.selected : ""}`}>
+      <div className={styles.imageContainer}>
+        <Image
+          src={imageLink || "/default-course-logo.svg"}
+          alt={`${name} Track Logo`}
+          width={90}
+          height={90}
+        />
+        {isSelected && <span className={styles.selectedLabel}>Selected</span>}
+      </div>
       <div className={styles.beneathImage}>
         <p className={styles.trackWord}>Track</p>
         <p className={styles.trackCourseCount}>
-          {trackCourseCount > 1
-            ? `${trackCourseCount} Courses`
-            : `${trackCourseCount} Course`}
+          {courseCount > 1 ? `${courseCount} Courses` : `${courseCount} Course`}
         </p>
       </div>
-      <h2 className={styles.trackName}>{trackName}</h2>
-      <p className={styles.trackDescription}>{trackDescription}</p>
+      <h2 className={styles.trackName}>{name}</h2>
+      <p className={styles.trackDescription}>{description}</p>
       <div className={styles.buttonContainer}>
-        <button className={styles.selectButton}>Select</button>
-        <Link href={trackLink} className={styles.openButton}>
-          View
-        </Link>
+        {isSelected ? (
+          <Link href={link} className={styles.selectButton}>
+            Open
+          </Link>
+        ) : (
+          <>
+            <button
+              className={styles.selectButton}
+              onClick={() => onSelect(id)}
+            >
+              Select
+            </button>
+            <Link href={link} className={styles.openButton}>
+              View
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
