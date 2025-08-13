@@ -1,0 +1,98 @@
+.foundationsCourseCard {
+  background-color: #2f3f54;
+  color: #fff;
+  border-radius: 8px;
+  padding: 24px 50px;
+  max-width: 1200px;
+  border: 1px solid #6b6b6b;
+  box-sizing: border-box;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.courseName {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.right {
+  display: flex;
+  gap: 20px;
+}
+
+.selectButton,
+.openButton {
+  padding: 12px 40px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: 1.2rem;
+  font-family: "Arial";
+}
+
+.selectButton {
+  background-color: oklch(60% 0.118 184.704);
+  color: white;
+}
+
+.selectButton:hover {
+  background-color: oklch(51.1% 0.096 186.391);
+}
+
+.openButton {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #6b6b6b;
+}
+
+.openButton:hover {
+  background-color: #34495e;
+  color: white;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #6b6b6b;
+  margin: 24px 0;
+}
+
+.description {
+  color: #bfbfbf;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.selectedLabel {
+  background-color: oklch(60% 0.118 184.704);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
