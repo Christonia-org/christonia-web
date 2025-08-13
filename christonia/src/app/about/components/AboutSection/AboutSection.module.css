@@ -1,12 +1,11 @@
 .aboutSection {
-  background-color: #17223d; 
+  background-color: #17223d;
   color: #fff;
   padding: 2rem 2rem;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 2px solid #8E8E8E;
   padding-bottom: 4rem;
 }
 
@@ -15,8 +14,8 @@
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
-  max-width: 900px; 
-  width: 100%; 
+  max-width: 900px;
+  width: 100%;
 }
 
 .boldDescription {
@@ -68,13 +67,13 @@
 }
 
 .expectationImage {
-  width: 90px; 
+  width: 90px;
   height: auto;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .expectationContent {
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .expectationTitle {
@@ -87,7 +86,7 @@
 .expectationDescription {
   font-size: 1rem;
   line-height: 1.5;
-  color: #c9cdd4; 
+  color: #c9cdd4;
 }
 
 /* --- Responsive Adjustments --- */
