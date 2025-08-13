@@ -11,7 +11,9 @@ export default function SignedInHeader({
     <header className={styles.header}>
       <div className={styles.logoSection}>
         <img src="/icon.png" alt="Christonia Logo" className={styles.logo} />
-        <h1 className={styles.title}>Christonia</h1>
+        <Link href={"/"} className={styles.title}>
+          Christonia
+        </Link>
       </div>
       <nav>
         <ul className={styles.navList}>
