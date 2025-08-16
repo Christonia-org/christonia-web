@@ -2,15 +2,6 @@ import styles from "./CourseCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-interface CourseCardProps {
-  name: string;
-  imageLink: string;
-  description: string;
-  link: string;
-  id: string;
-  progress: number;
-}
-
 export default function CourseCard({
   name,
   imageLink,
