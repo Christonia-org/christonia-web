@@ -2,6 +2,7 @@ import { getTrackById } from "@/lib/mock/tracks";
 import { getCourses } from "@/lib/mock/courses";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
+import CourseCard from "./components/CourseCard/CourseCard";
 
 export default function TrackCoursesPage({ params }: TrackCoursesPageProps) {
   const { trackId } = params;
@@ -19,10 +20,15 @@ export default function TrackCoursesPage({ params }: TrackCoursesPageProps) {
       <p>{track.description}</p>
       <div className={styles.coursesContainer}>
         {courses.map((course) => (
-          <div key={course.id}>
-            <h2>{course.name}</h2>
-            <p>{course.description}</p>
-          </div>
+          <CourseCard
+            key={course.id}
+            name={course.name}
+            imageLink={course.imageLink}
+            description={course.description}
+            link={`/tracks/${trackId}/${course.id}`}
+            progress={0}
+            id={course.id}
+          />
         ))}
       </div>
     </div>
