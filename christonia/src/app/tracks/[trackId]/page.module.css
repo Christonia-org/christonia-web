@@ -1,0 +1,28 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 6rem;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.trackName {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #bfbfbf;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.coursesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
