@@ -1,10 +1,3 @@
-interface CoursePageProps {
-  params: {
-    trackId: string;
-    courseId: string;
-  };
-}
-
 export default function CoursePage({ params }: CoursePageProps) {
   return (
     <>
