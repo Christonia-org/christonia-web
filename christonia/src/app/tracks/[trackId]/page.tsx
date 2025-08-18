@@ -27,7 +27,7 @@ export default function TrackCoursesPage({ params }: TrackCoursesPageProps) {
               name={course.name}
               imageLink={course.imageLink}
               description={course.description}
-              link={`/tracks/${trackId}/${course.link}`}
+              link={`/tracks/${trackId}/${course.id}`}
               progress={0}
               id={course.id}
             />

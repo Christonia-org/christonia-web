@@ -1,0 +1,7 @@
+.module {
+  display: flex;
+  flex-direction: column;
+  background-color: #2f3f54;
+  color: #fff;
+  padding: 1rem 2rem;
+}

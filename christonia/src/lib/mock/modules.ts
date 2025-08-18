@@ -3,6 +3,7 @@ import { assert } from "console";
 const modules = [
   {
     id: "module1",
+    name: "Module 1",
     items: [
       {
         id: "item1",
@@ -38,6 +39,7 @@ const modules = [
   },
   {
     id: "module2",
+    name: "Module 2",
     items: [
       {
         id: "item1",
@@ -61,6 +63,7 @@ const modules = [
   },
   {
     id: "module3",
+    name: "Module 3",
     items: [
       {
         id: "item1",
