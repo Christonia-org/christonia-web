@@ -1,5 +1,7 @@
 import ModuleComponent from "./components/ModuleComponent/ModuleComponent";
 import { getCourseById } from "@/lib/mock/courses";
+import Image from "next/image";
+import SupportUsSection from "@/components/SupportUsSection/SupportUsSection";
 
 export default function CoursePage({ params }: CoursePageProps) {
   const { courseId } = params;
@@ -8,13 +10,22 @@ export default function CoursePage({ params }: CoursePageProps) {
   return (
     <>
       <div>
-        <h1>Course</h1>
+        <Image
+          src={course.imageLink || "/default-course-logo.svg"}
+          alt="Course Logo"
+          width={100}
+          height={100}
+        />
+        <h1>{course.name}</h1>
+        <h2>Overview</h2>
+        <p>{course.description}</p>
         <div>
           {course.modules.map((module) => (
             <ModuleComponent key={module.id} module={module} />
           ))}
         </div>
       </div>
+      <SupportUsSection />
     </>
   );
 }
