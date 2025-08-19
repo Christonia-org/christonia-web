@@ -1,4 +1,4 @@
-interface CourseCardProps {
+interface ProgressCourseCardProps {
   courseName: string;
   courseTrack?: string | null;
   courseImageLink: string;
