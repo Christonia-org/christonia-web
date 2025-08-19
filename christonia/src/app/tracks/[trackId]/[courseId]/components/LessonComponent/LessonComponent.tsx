@@ -5,17 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-interface LessonComponentProps {
-  title: string;
-  link: string;
-  isComplete: boolean;
-}
-
 export default function LessonComponent({
   title,
   link,
   isComplete,
-}: LessonComponentProps) {
+}: ModuleItemProps) {
   let [icon, setIcon] = useState(
     isComplete ? "/complete-lesson.svg" : "/incomplete-lesson.svg"
   );

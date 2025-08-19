@@ -24,7 +24,14 @@ export default function ModuleComponent(props: ModuleComponentProps) {
       <div className={styles.moduleContent}>
         {module.items.map((item) => {
           if (item.type === "quiz") {
-            return <QuizComponent key={item.id} />;
+            return (
+              <QuizComponent
+                key={item.id}
+                title={item.title}
+                link={item.link}
+                isComplete={false}
+              />
+            );
           } else if (item.type === "blog-assignment") {
             return <BlogAssignmentComponent key={item.id} />;
           } else {
