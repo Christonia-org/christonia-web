@@ -33,7 +33,14 @@ export default function ModuleComponent(props: ModuleComponentProps) {
               />
             );
           } else if (item.type === "blog-assignment") {
-            return <BlogAssignmentComponent key={item.id} />;
+            return (
+              <BlogAssignmentComponent
+                key={item.id}
+                title={item.title}
+                link={item.link}
+                isComplete={false}
+              />
+            );
           } else {
             return (
               <LessonComponent
