@@ -2,7 +2,7 @@
 import { useState } from "react";
 import SupportUsSection from "@/components/SupportUsSection";
 import FoundationsCourseCard from "./components/FoundationsCourseCard";
-import TrackCard from "./components/TrackCard/TrackCard";
+import TrackCard from "./components/TrackCard";
 import { getTracks } from "@/lib/mock/tracks";
 
 export default function TracksPage() {
@@ -38,18 +38,19 @@ export default function TracksPage() {
           Then choose a track
         </p>
 
-        <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 w-full max-w-[1200px]">
+        <div className="flex flex-col md:flex-row items-stretch gap-8 w-full max-w-[1200px]">
           {tracks.map((track) => (
-            <TrackCard
-              key={track.id}
-              id={track.id}
-              name={track.name}
-              description={track.description}
-              link={track.link}
-              courseCount={track.courseCount}
-              isSelected={selectedItemId === track.id}
-              onSelect={handleSelect}
-            />
+            <div key={track.id} className="flex-1">
+              <TrackCard
+                id={track.id}
+                name={track.name}
+                description={track.description}
+                link={track.link}
+                courseCount={track.courseCount}
+                isSelected={selectedItemId === track.id}
+                onSelect={handleSelect}
+              />
+            </div>
           ))}
         </div>
       </div>
