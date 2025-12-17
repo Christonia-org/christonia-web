@@ -1,4 +1,4 @@
-import HowToContributeSection from "./components/HowToContributeSection/HowToContributeSection";
+import HowToContributeSection from "./components/HowToContributeSection";
 import WhyYouShouldContributeSection from "./components/WhyYouShouldContributeSection/WhyYouShouldContributeSection";
 import SupportUsSection from "@/components/SupportUsSection";
 
