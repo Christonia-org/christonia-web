@@ -1,4 +1,3 @@
-import styles from "./MeetTheTeamSection.module.css";
 import Link from "next/link";
 import PersonCard from "./PersonCard";
 
@@ -207,11 +206,10 @@ export default function MeetTheTeamSection() {
             <h2 className="text-3xl font-bold text-white mb-4 text-center md:text-left">
               {section.title}
             </h2>
-            <p className="text-base md:text-lg leading-relaxed text-[#c9cdd4] mb-10 max-w-[800px] text-center md:text-left mx-auto md:mx-0">
+            <p className="text-base md:text-lg leading-relaxed text-[#c9cdd4] mb-10 w-full max-w-full text-center md:text-left mx-auto md:mx-0">
               {section.desc}
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,200px)] gap-x-8 gap-y-12 justify-center md:justify-start">
-              {" "}
+            <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,200px)] gap-x-8 gap-y-12 justify-center justify-items-center md:justify-start md:justify-items-start">
               {section.data.map((member) => (
                 <PersonCard
                   key={member.id}

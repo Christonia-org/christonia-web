@@ -1,11 +1,11 @@
 import MeetTheTeamSection from "./components/MeetTheTeamSection";
-import ToOurContributorsSection from "./components/ToOurContributorsSection/ToOurContributorsSection";
+import ToOurContributorsSection from "./components/ToOurContributorsSection";
 import SupportUsSection from "@/components/SupportUsSection";
 
 export default function TeamPage() {
   return (
     <>
-      <div className="flex flex-col items-center gap-16 md:gap-24 bg-background min-h-screen w-full">
+      <div className="flex flex-col items-center w-full bg-background min-h-screen">
         <MeetTheTeamSection />
         <ToOurContributorsSection />
       </div>
