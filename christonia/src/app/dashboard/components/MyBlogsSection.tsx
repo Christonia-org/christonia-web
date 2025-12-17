@@ -1,4 +1,4 @@
-import MyBlogCard from "./MyBlogCard/MyBlogCard";
+import MyBlogCard from "./MyBlogCard";
 
 export default function MyBlogsSection() {
   return (
