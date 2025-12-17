@@ -1,4 +1,4 @@
-import ChangePasswordForm from "./components/ChangePasswordForm/ChangePasswordForm";
+import ChangePasswordForm from "./components/ChangePasswordForm";
 
 export default function ChangePasswordPage() {
   return (
