@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FaqSection from "./components/FaqSection/FaqSection";
+import FaqSection from "./components/FaqSection";
 
 export default function SupportUsPage() {
   return (
