@@ -1,6 +1,5 @@
-import styles from "./BlogsSection.module.css";
 import Image from "next/image";
-import BlogCard from "../BlogCard";
+import BlogCard from "./BlogCard";
 
 export default function BlogsSection() {
   const blogData = [
@@ -73,25 +72,27 @@ export default function BlogsSection() {
   ];
 
   return (
-    <section className={styles.blogsSection}>
-      <h1 className={styles.sectionTitle}>Blogs</h1>
-      <div className={styles.searchContainer}>
-        <button className={styles.searchButton}>
+    <section className="flex flex-col items-center px-4 py-8 w-full text-white font-sans">
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">Blogs</h1>
+
+      <div className="sticky top-8 z-40 flex items-center bg-[#304156] rounded-lg px-4 py-3 w-full max-w-[600px] mb-24 mt-2 shadow-2xl border border-white/5">
+        <button className="p-0 mr-3 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
           <Image
             src="/search-icon.svg"
             alt="Search"
-            width={30}
-            height={30}
-            className={styles.searchIcon}
+            width={24}
+            height={24}
+            className="w-6 h-6"
           />
         </button>
         <input
           type="text"
           placeholder="Search for the blog you're looking for..."
-          className={styles.searchInput}
+          className="flex-grow bg-transparent border-none outline-none text-base text-white placeholder-[#c9cdd4]"
         />
       </div>
-      <div className={styles.blogsContainer}>
+
+      <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 w-full max-w-[1200px] mb-12 justify-items-center">
         {blogData.map((blog) => (
           <BlogCard
             key={blog.id}
@@ -105,7 +106,10 @@ export default function BlogsSection() {
           />
         ))}
       </div>
-      <button className={styles.loadMoreButton}>Load More</button>
+
+      <button className="bg-brand-teal text-white text-xl font-medium px-8 py-3 rounded-md w-[90%] md:w-3/5 hover:bg-brand-teal-dark transition-all duration-200 shadow-lg active:scale-[0.98] mb-8">
+        Load More
+      </button>
     </section>
   );
 }

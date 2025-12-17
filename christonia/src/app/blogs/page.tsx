@@ -1,5 +1,5 @@
 import BookmarkedBlogsSection from "./components/BookmarkedBlogsSection";
-import BlogsSection from "./components/BlogsSection/BlogsSection";
+import BlogsSection from "./components/BlogsSection";
 import SupportUsSection from "@/components/SupportUsSection";
 
 export default function BlogsPage() {
