@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import ProgressBar from "./ProgressBar/ProgressBar";
+import ProgressBar from "./ProgressBar";
 
 interface ProfileSummaryProps {
   username: string;

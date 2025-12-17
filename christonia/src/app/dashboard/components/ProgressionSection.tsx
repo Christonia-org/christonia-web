@@ -1,4 +1,4 @@
-import ProgressCourseCard from "./ProgressCourseCard/ProgressCourseCard";
+import ProgressCourseCard from "./ProgressCourseCard";
 
 export default function ProgressionSection() {
   return (
