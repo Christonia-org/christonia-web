@@ -1,4 +1,4 @@
-import DashboardSection from "./components/DashboardSection/DashboardSection";
+import DashboardSection from "./components/DashboardSection";
 import ProgressionSection from "./components/ProgressionSection/ProgressionSection";
 import MyBlogsSection from "./components/MyBlogsSection/MyBlogsSection";
 import SupportUsSection from "@/components/SupportUsSection";
