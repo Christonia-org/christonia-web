@@ -1,17 +1,17 @@
-import styles from './page.module.css'
-import BookmarkedBlogsSection from './components/BookmarkedBlogsSection/BookmarkedBlogsSection';
-import BlogsSection from './components/BlogsSection/BlogsSection';
-import SupportUsSection from '@/components/SupportUsSection/SupportUsSection';
+import styles from "./page.module.css";
+import BookmarkedBlogsSection from "./components/BookmarkedBlogsSection/BookmarkedBlogsSection";
+import BlogsSection from "./components/BlogsSection/BlogsSection";
+import SupportUsSection from "@/components/SupportUsSection";
 
 export default function BlogsPage() {
-    return (
-        <>
-            <div className={styles.blogsPage}>
-                <BookmarkedBlogsSection />
-                <hr />
-                <BlogsSection />
-            </div>
-            <SupportUsSection />
-        </>
-    );
+  return (
+    <>
+      <div className={styles.blogsPage}>
+        <BookmarkedBlogsSection />
+        <hr />
+        <BlogsSection />
+      </div>
+      <SupportUsSection />
+    </>
+  );
 }

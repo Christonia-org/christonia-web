@@ -1,7 +1,7 @@
 import ModuleComponent from "./components/ModuleComponent/ModuleComponent";
 import { getCourseById } from "@/lib/mock/courses";
 import Image from "next/image";
-import SupportUsSection from "@/components/SupportUsSection/SupportUsSection";
+import SupportUsSection from "@/components/SupportUsSection";
 import styles from "./page.module.css";
 
 export default function CoursePage({ params }: CoursePageProps) {

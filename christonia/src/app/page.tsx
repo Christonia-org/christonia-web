@@ -1,6 +1,6 @@
 import JourneySection from "@/components/JourneySection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import SupportUsSection from "@/components/SupportUsSection/SupportUsSection";
+import SupportUsSection from "@/components/SupportUsSection";
 
 export default function Home() {
   return (

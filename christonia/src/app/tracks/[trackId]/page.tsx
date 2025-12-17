@@ -3,7 +3,7 @@ import { getCourses } from "@/lib/mock/courses";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 import CourseCard from "./components/CourseCard/CourseCard";
-import SupportUsSection from "@/components/SupportUsSection/SupportUsSection";
+import SupportUsSection from "@/components/SupportUsSection";
 
 export default function TrackCoursesPage({ params }: TrackCoursesPageProps) {
   const { trackId } = params;
