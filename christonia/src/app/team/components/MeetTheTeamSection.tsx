@@ -1,6 +1,6 @@
 import styles from "./MeetTheTeamSection.module.css";
 import Link from "next/link";
-import PersonCard from "./PersonCard/PersonCard";
+import PersonCard from "./PersonCard";
 
 interface Member {
   id: string;
@@ -210,7 +210,8 @@ export default function MeetTheTeamSection() {
             <p className="text-base md:text-lg leading-relaxed text-[#c9cdd4] mb-10 max-w-[800px] text-center md:text-left mx-auto md:mx-0">
               {section.desc}
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,175px)] gap-x-12 gap-y-16 md:gap-x-[70px] justify-center md:justify-start">
+            <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,200px)] gap-x-8 gap-y-12 justify-center md:justify-start">
+              {" "}
               {section.data.map((member) => (
                 <PersonCard
                   key={member.id}
