@@ -1,4 +1,4 @@
-import JourneySection from "@/components/JourneySection/JourneySection";
+import JourneySection from "@/components/JourneySection";
 import HowItWorksSection from "@/components/HowItWorksSection/HowItWorksSection";
 import SupportUsSection from "@/components/SupportUsSection/SupportUsSection";
 
