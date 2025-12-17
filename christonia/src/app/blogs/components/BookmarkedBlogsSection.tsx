@@ -1,4 +1,4 @@
-import BlogCard from "../BlogCard/BlogCard";
+import BlogCard from "./BlogCard";
 
 export default function BookmarkedBlogsSection() {
   const blogData = [

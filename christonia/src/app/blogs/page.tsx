@@ -1,4 +1,4 @@
-import BookmarkedBlogsSection from "./components/BookmarkedBlogsSection/BookmarkedBlogsSection";
+import BookmarkedBlogsSection from "./components/BookmarkedBlogsSection";
 import BlogsSection from "./components/BlogsSection/BlogsSection";
 import SupportUsSection from "@/components/SupportUsSection";
 
