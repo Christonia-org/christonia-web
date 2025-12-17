@@ -1,6 +1,6 @@
 import DashboardSection from "./components/DashboardSection";
 import ProgressionSection from "./components/ProgressionSection";
-import MyBlogsSection from "./components/MyBlogsSection/MyBlogsSection";
+import MyBlogsSection from "./components/MyBlogsSection";
 import SupportUsSection from "@/components/SupportUsSection";
 
 export default function DashboardPage() {
