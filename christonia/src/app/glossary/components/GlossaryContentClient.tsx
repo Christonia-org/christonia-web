@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import GlossaryTerm from "./GlossaryTerm/GlossaryTerm";
+import GlossaryTerm from "./GlossaryTerm";
 
 export default function GlossaryContentClient({
   terms,
