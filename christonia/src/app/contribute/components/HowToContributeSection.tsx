@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ContributeCard from "./ContributeCard/ContributeCard";
+import ContributeCard from "./ContributeCard";
 
 export default function HowToContributeSection() {
   return (
