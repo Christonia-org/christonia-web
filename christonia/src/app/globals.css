@@ -5,6 +5,7 @@
   --color-brand-teal: oklch(60% 0.118 184.704);
   --color-brand-teal-dark: oklch(51.1% 0.096 186.391);
   --color-brand-gold: #e1a90f;
+  --color-background-alt: #202c39;
 }
 
 @layer base {
