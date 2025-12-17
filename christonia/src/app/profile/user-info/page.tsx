@@ -1,5 +1,5 @@
 import ProfileInfoForm from "./components/ProfileInfoForm";
-import DangerZoneSection from "./components/DangerZoneSection/DangerZoneSection";
+import DangerZoneSection from "./components/DangerZoneSection";
 
 export default function UserProfilePage() {
   return (
