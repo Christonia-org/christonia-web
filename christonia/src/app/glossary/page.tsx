@@ -1,4 +1,4 @@
-import GlossaryContentClient from "./components/GlossaryContent/GlossaryContent";
+import GlossaryContentClient from "./components/GlossaryContentClient";
 
 const allGlossaryTerms: GlossaryTermData[] = [
   {
