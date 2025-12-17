@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import SupportUsSection from "@/components/SupportUsSection";
-import FoundationsCourseCard from "./components/FoundationsCourseCard/FoundationsCourseCard";
+import FoundationsCourseCard from "./components/FoundationsCourseCard";
 import TrackCard from "./components/TrackCard/TrackCard";
 import { getTracks } from "@/lib/mock/tracks";
 
