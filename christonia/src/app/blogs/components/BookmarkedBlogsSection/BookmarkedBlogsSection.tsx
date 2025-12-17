@@ -1,9 +1,7 @@
-import styles from './BookmarkedBlogsSection.module.css'
-import BlogCard from '../BlogCard/BlogCard';
+import BlogCard from "../BlogCard/BlogCard";
 
 export default function BookmarkedBlogsSection() {
-
-    const blogData = [
+  const blogData = [
     {
       id: 1,
       title: "How to Master React Hooks in 2025",
@@ -12,7 +10,8 @@ export default function BookmarkedBlogsSection() {
       dateEdited: "Aug 7, 2025",
       likes: 128,
       isBookmarked: true,
-      description: "A comprehensive guide to understanding and using the most important React hooks, from useState and useEffect to custom hooks and advanced patterns.",
+      description:
+        "A comprehensive guide to understanding and using the most important React hooks, from useState and useEffect to custom hooks and advanced patterns.",
     },
     {
       id: 2,
@@ -22,7 +21,8 @@ export default function BookmarkedBlogsSection() {
       dateEdited: null,
       likes: 74,
       isBookmarked: true,
-      description: "Dive into ES2025 and beyond. Learn about new features, best practices, and tools that will supercharge your JavaScript development.",
+      description:
+        "Dive into ES2025 and beyond. Learn about new features, best practices, and tools that will supercharge your JavaScript development.",
     },
     {
       id: 3,
@@ -32,7 +32,8 @@ export default function BookmarkedBlogsSection() {
       dateEdited: "Jun 2, 2025",
       likes: 210,
       isBookmarked: true,
-      description: "A deep dive into Promises, async/await, and event loops to help you write more efficient and readable asynchronous code.",
+      description:
+        "A deep dive into Promises, async/await, and event loops to help you write more efficient and readable asynchronous code.",
     },
     {
       id: 4,
@@ -42,7 +43,8 @@ export default function BookmarkedBlogsSection() {
       dateEdited: null,
       likes: 95,
       isBookmarked: true,
-      description: "Explore the strengths and weaknesses of CSS Grid and Flexbox to make informed decisions about your layout strategies.",
+      description:
+        "Explore the strengths and weaknesses of CSS Grid and Flexbox to make informed decisions about your layout strategies.",
     },
     {
       id: 5,
@@ -52,7 +54,8 @@ export default function BookmarkedBlogsSection() {
       dateEdited: "Apr 11, 2025",
       likes: 150,
       isBookmarked: true,
-      description: "Learn how to design and implement robust, scalable RESTful APIs using Node.js, Express, and best practices.",
+      description:
+        "Learn how to design and implement robust, scalable RESTful APIs using Node.js, Express, and best practices.",
     },
     {
       id: 6,
@@ -62,28 +65,35 @@ export default function BookmarkedBlogsSection() {
       dateEdited: null,
       likes: 180,
       isBookmarked: true,
-      description: "Get started with TypeScript in your React projects. Understand types, interfaces, and how to improve your code's reliability.",
+      description:
+        "Get started with TypeScript in your React projects. Understand types, interfaces, and how to improve your code's reliability.",
     },
   ];
 
-    return (
-        <section className={styles.bookmarkedBlogsSection}>
-            <h1 className={styles.bookmarkedBlogsSectionTitle}>Bookmarked Blogs</h1>
-            <div className={styles.bookmarkedBlogsContainer}>
-                {blogData.map((blog) => (
-                    <BlogCard
-                        key={blog.id}
-                        title={blog.title}
-                        author={blog.author}
-                        datePublished={blog.datePublished}
-                        dateEdited={blog.dateEdited}
-                        likes={blog.likes}
-                        isBookmarked={blog.isBookmarked}
-                        description={blog.description}
-                    />
-                ))}
-            </div>
-            <button className={styles.viewAllButton}>View All</button>
-        </section>
-    );
+  return (
+    <section className="flex flex-col items-center text-center px-4 md:px-8 py-8 w-full text-white font-sans">
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-24">
+        Bookmarked Blogs
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 w-full max-w-[1200px] mb-12 justify-items-center">
+        {blogData.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            title={blog.title}
+            author={blog.author}
+            datePublished={blog.datePublished}
+            dateEdited={blog.dateEdited}
+            likes={blog.likes}
+            isBookmarked={blog.isBookmarked}
+            description={blog.description}
+          />
+        ))}
+      </div>
+
+      <button className="bg-brand-teal text-white text-xl font-medium px-8 py-3 rounded-md w-[90%] md:w-3/5 hover:bg-brand-teal-dark transition-all duration-200 shadow-md active:scale-[0.98]">
+        View All
+      </button>
+    </section>
+  );
 }
