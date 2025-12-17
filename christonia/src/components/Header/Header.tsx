@@ -1,10 +1,10 @@
-import SignedOutHeader from "../SignedOutHeader/SignedOutHeader";
-import SignedInHeader from "../SignedInHeader/SignedInHeader";
+import SignedOutHeader from "../SignedOutHeader";
+import SignedInHeader from "../SignedInHeader";
 
 export default function Header() {
-    return (
-        <>
-            <SignedInHeader />
-        </>
-    );
+  return (
+    <>
+      <SignedOutHeader />
+    </>
+  );
 }
