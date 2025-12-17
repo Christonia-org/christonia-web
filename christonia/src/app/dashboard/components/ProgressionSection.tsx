@@ -1,11 +1,13 @@
-import styles from "./ProgressionSection.module.css";
-import ProgressCourseCard from "../ProgressCourseCard/ProgressCourseCard";
+import ProgressCourseCard from "./ProgressCourseCard/ProgressCourseCard";
 
 export default function ProgressionSection() {
   return (
-    <section className={styles.progressionSection}>
-      <h1 className={styles.title}>Progression</h1>
-      <div className={styles.courseContainer}>
+    <section className="flex flex-col items-center w-full gap-8 md:gap-12 font-sans">
+      <h1 className="text-4xl md:text-5xl lg:text-[3rem] font-bold text-white text-center">
+        Progression
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full lg:w-[90%] justify-items-center">
         <ProgressCourseCard
           courseName="Introduction to Web Development"
           courseTrack="Front-End Fundamentals"
