@@ -1,4 +1,4 @@
-import ProfileSummary from "./ProfileSummary/ProfileSummary";
+import ProfileSummary from "./ProfileSummary";
 
 export default function DashboardSection() {
   return (
