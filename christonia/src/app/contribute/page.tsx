@@ -1,5 +1,5 @@
 import HowToContributeSection from "./components/HowToContributeSection";
-import WhyYouShouldContributeSection from "./components/WhyYouShouldContributeSection/WhyYouShouldContributeSection";
+import WhyYouShouldContributeSection from "./components/WhyYouShouldContributeSection";
 import SupportUsSection from "@/components/SupportUsSection";
 
 export default function ContributePage() {
