@@ -1,13 +1,17 @@
-import styles from "./page.module.css";
-import ForgotPasswordForm from "./components/ForgotPasswordForm/ForgotPasswordForm";
+import ForgotPasswordForm from "./components/ForgotPasswordForm";
 import SupportUsSection from "@/components/SupportUsSection";
 
 export default function ForgotPasswordPage() {
   return (
     <>
-      <section className={styles.forgotPasswordSection}>
-        <h1 className={styles.title}>Forgot your password?</h1>
-        <ForgotPasswordForm />
+      <section className="bg-background flex flex-col items-center justify-center px-6 py-12 md:py-20 border-t-2 border-[#8E8E8E]">
+        <h1 className="text-white text-3xl md:text-4xl font-bold mb-8 text-center">
+          Forgot your password?
+        </h1>
+
+        <div className="w-full max-w-[400px]">
+          <ForgotPasswordForm />
+        </div>
       </section>
       <SupportUsSection />
     </>
