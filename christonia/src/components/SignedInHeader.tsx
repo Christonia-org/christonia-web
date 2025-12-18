@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,6 +12,21 @@ export default function SignedInHeader({
   userProfilePicUrl,
 }: SignedInHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const profileRef = useRef<HTMLLIElement>(null);
+  // Close profile dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(event.target as Node)
+      ) {
+        setIsProfileOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navLinks = [
     { name: "Dashboard", href: "/dashboard" },
@@ -50,23 +65,54 @@ export default function SignedInHeader({
               </Link>
             </li>
           ))}
-          <li>
-            <Link href="/profile/user-info" className="block shrink-0">
+
+          <li className="relative" ref={profileRef}>
+            <button
+              onClick={() => setIsProfileOpen(!isProfileOpen)}
+              className="block shrink-0 focus:outline-none transition-transform active:scale-95"
+            >
               <Image
                 src={userProfilePicUrl || "/profile-icon.svg"}
                 alt="Profile Image"
                 width={45}
                 height={45}
-                className="rounded-full object-cover border border-gray-700"
+                className="rounded-full object-cover border border-gray-700 hover:border-brand-teal transition-colors"
               />
-            </Link>
+            </button>
+
+            {isProfileOpen && (
+              <div className="absolute right-0 mt-3 w-56 bg-[#1e2a4a] border border-gray-600 rounded-lg shadow-xl py-2 overflow-hidden animate-in fade-in zoom-in duration-200">
+                <Link
+                  href="/profile/user-info"
+                  className="flex items-center px-4 py-3 text-sm text-gray-200 hover:bg-white/10 hover:text-white transition-colors no-underline"
+                  onClick={() => setIsProfileOpen(false)}
+                >
+                  Edit Profile
+                </Link>
+                <Link
+                  href="/profile/password"
+                  className="flex items-center px-4 py-3 text-sm text-gray-200 hover:bg-white/10 hover:text-white transition-colors no-underline"
+                  onClick={() => setIsProfileOpen(false)}
+                >
+                  Change Password
+                </Link>
+                <hr className="border-gray-600 my-1" />
+                <button
+                  className="w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 transition-colors"
+                  onClick={() => {
+                    /* Sign out logic */
+                  }}
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
           </li>
         </ul>
 
         <button
           className="lg:hidden p-2 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
         >
           <svg
             className="w-8 h-8"
@@ -117,20 +163,29 @@ export default function SignedInHeader({
             </Link>
           ))}
           <hr className="border-gray-600" />
-          <Link
-            href="/profile/user-info"
-            className="flex items-center gap-3 text-white no-underline"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Image
-              src={userProfilePicUrl || "/profile-icon.svg"}
-              alt="Profile"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <span>My Profile</span>
-          </Link>
+
+          <div className="flex flex-col gap-4">
+            <Link
+              href="/profile/user-info"
+              className="text-gray-300 no-underline text-base"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Edit Profile
+            </Link>
+            <Link
+              href="/profile/password"
+              className="text-gray-300 no-underline text-base"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Change Password
+            </Link>
+            <button
+              className="text-left text-red-400 text-base"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sign Out
+            </button>
+          </div>
         </div>
       </div>
     </header>
