@@ -110,7 +110,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact-us"
+                  href="/about#contact-us"
                   className="no-underline text-white hover:underline"
                 >
                   Contact us
