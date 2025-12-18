@@ -1,7 +1,7 @@
 import { getTrackById } from "@/lib/mock/tracks";
 import { getCourses } from "@/lib/mock/courses";
 import { notFound } from "next/navigation";
-import CourseCard from "./components/CourseCard/CourseCard";
+import CourseCard from "./components/CourseCard";
 import SupportUsSection from "@/components/SupportUsSection";
 
 interface TrackCoursesPageProps {
@@ -41,7 +41,6 @@ export default function TrackCoursesPage({ params }: TrackCoursesPageProps) {
               description={course.description}
               link={`/tracks/${trackId}/${course.id}`}
               progress={0}
-              id={course.id}
             />
           ))}
         </div>
