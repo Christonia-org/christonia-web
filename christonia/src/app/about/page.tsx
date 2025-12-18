@@ -1,13 +1,13 @@
-import AboutSection from "./components/AboutSection/AboutSection";
-import OverviewSection from "./components/OverviewSection/OverviewSection";
-import ContactUsSection from "./components/ContactUsSection/ContactUsSection";
+import AboutSection from "./components/AboutSection";
+import OverviewSection from "./components/OverviewSection";
+import ContactUsSection from "./components/ContactUsSection";
 
 export default function AboutPage() {
   return (
     <>
-        <AboutSection />
-        <OverviewSection />
-        <ContactUsSection />
+      <AboutSection />
+      <OverviewSection />
+      <ContactUsSection />
     </>
   );
 }

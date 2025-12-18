@@ -1,9 +1,8 @@
-import styles from "./page.module.css";
-import ChangePasswordForm from "./components/ChangePasswordForm/ChangePasswordForm";
+import ChangePasswordForm from "./components/ChangePasswordForm";
 
 export default function ChangePasswordPage() {
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col gap-8 mb-8 font-sans">
       <ChangePasswordForm />
     </div>
   );
