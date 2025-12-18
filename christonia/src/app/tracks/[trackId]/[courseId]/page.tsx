@@ -1,4 +1,4 @@
-import ModuleComponent from "./components/ModuleComponent/ModuleComponent";
+import ModuleComponent from "./components/ModuleComponent";
 import { getCourseById } from "@/lib/mock/courses";
 import Image from "next/image";
 import SupportUsSection from "@/components/SupportUsSection";
