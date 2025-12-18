@@ -31,9 +31,7 @@ export default function FoundationsCourseCard({
             : "border-gray-500"
         }`}
     >
-      {/* Card Header: Responsive layout from Col to Row */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-        {/* Left Side: Logo, Title, and "Selected" Badge */}
         <div className="flex items-center gap-4 md:gap-5 self-start md:self-center w-full md:w-auto">
           <div className="shrink-0">
             <Image
@@ -45,7 +43,6 @@ export default function FoundationsCourseCard({
             />
           </div>
 
-          {/* Title Container: flex-wrap prevents the badge from clipping on small screens */}
           <div className="flex flex-wrap items-center gap-2 md:gap-4 min-w-0">
             <h2 className="text-xl md:text-3xl font-semibold m-0 truncate">
               {name}
@@ -58,7 +55,6 @@ export default function FoundationsCourseCard({
           </div>
         </div>
 
-        {/* Right Side: Action Buttons */}
         <div className="flex gap-3 w-full md:w-auto">
           {isSelected ? (
             <Link
@@ -86,10 +82,8 @@ export default function FoundationsCourseCard({
         </div>
       </div>
 
-      {/* Decorative Divider */}
       <hr className="border-none h-px bg-gray-600 my-6 md:my-8" />
 
-      {/* Description Section */}
       <p className="text-gray-300 text-base md:text-lg leading-relaxed m-0 italic md:not-italic">
         {description}
       </p>
