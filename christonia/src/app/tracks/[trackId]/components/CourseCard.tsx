@@ -43,8 +43,9 @@ export default function CourseCard({
                 />
               </div>
 
-              <span className="absolute inset-0 flex items-center justify-center font-bold text-2xl text-brand-teal opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
-                {progress}%
+              <span className="absolute inset-0 flex flex-col items-center justify-center font-bold text-[10px] md:text-base text-brand-teal opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+                <span>{progress}%</span>
+                <span className="text-[12px]">Complete</span>
               </span>
             </div>
 
