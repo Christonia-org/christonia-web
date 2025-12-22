@@ -10,8 +10,10 @@ interface TrackCoursesPageProps {
   };
 }
 
-export default function TrackCoursesPage({ params }: TrackCoursesPageProps) {
-  const { trackId } = params;
+export default async function TrackCoursesPage({
+  params,
+}: TrackCoursesPageProps) {
+  const { trackId } = await params;
 
   const track = getTrackById(trackId);
   const courses = getCourses();
