@@ -4,7 +4,7 @@ import SignedInHeader from "./SignedInHeader";
 export default function Header() {
   return (
     <>
-      <SignedInHeader />
+      <SignedOutHeader />
     </>
   );
 }

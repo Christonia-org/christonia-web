@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface TrackCardProps {
-  id: string;
+  trackId: string;
   name: string;
   imageLink?: string;
   description: string;
@@ -20,7 +20,7 @@ export default function TrackCard({
   description,
   link,
   courseCount,
-  id,
+  trackId,
   isSelected,
   onSelect,
 }: TrackCardProps) {
@@ -75,7 +75,7 @@ export default function TrackCard({
           <>
             <button
               className="flex-1 bg-brand-teal hover:bg-brand-teal-dark text-white py-2.5 rounded-md font-semibold transition-colors active:scale-95"
-              onClick={() => onSelect(id)}
+              onClick={() => onSelect(trackId)}
             >
               Select
             </button>

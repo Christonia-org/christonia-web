@@ -42,7 +42,7 @@ export default function TracksPage() {
           {tracks.map((track) => (
             <div key={track.id} className="flex-1">
               <TrackCard
-                id={track.id}
+                trackId={track.id}
                 name={track.name}
                 description={track.description}
                 link={track.link}
