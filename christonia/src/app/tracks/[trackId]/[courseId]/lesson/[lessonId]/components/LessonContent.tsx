@@ -43,7 +43,7 @@ export default function LessonContent({
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-12">
-      <div className="flex items-center gap-6 mb-16">
+      <div className="flex items-center gap-6">
         <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 overflow-hidden">
           <Image
             src={DefaultLogo}
@@ -66,7 +66,7 @@ export default function LessonContent({
         <div className="flex-1 min-w-0">
           <article
             className="prose prose-invert prose-lg max-w-none 
-            prose-h2:mt-8 prose-h2:mb-4 prose-h2:scroll-mt-24 
+            prose-h2:mt-14 prose-h2:mb-8 prose-h2:scroll-mt-24 
             prose-h2:pb-2
             prose-p:mt-0 prose-p:mb-4
             prose-a:text-brand-teal hover:prose-a:underline"
