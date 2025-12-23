@@ -2,15 +2,29 @@ import fs from "fs";
 import path from "path";
 import LessonContent from "./LessonContent";
 
-export default async function LessonViewer() {
-  const filePath = path.join(process.cwd(), "content", "test-lesson.md");
+interface LessonViewerProps {
+  trackId: string;
+  courseId: string;
+  lessonId: string;
+}
+
+export default async function LessonViewer({
+  trackId,
+  courseId,
+  lessonId,
+}: LessonViewerProps) {
+  const filePath = path.join(process.cwd(), "content", `${await lessonId}.md`);
+  const fallbackFilePath = path.join(
+    process.cwd(),
+    "content",
+    "test-lesson.md"
+  );
 
   let markdown = "";
   try {
     markdown = fs.readFileSync(filePath, "utf8");
   } catch (error) {
-    markdown =
-      "## Lesson not found\nPlease check if the file exists in /content/test-lesson.md";
+    markdown = fs.readFileSync(fallbackFilePath, "utf8");
   }
 
   return <LessonContent initialMarkdown={markdown} />;
