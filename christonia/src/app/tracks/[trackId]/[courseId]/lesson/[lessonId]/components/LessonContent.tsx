@@ -142,7 +142,7 @@ export default function LessonContent({
 
         <aside className="hidden lg:block w-64 shrink-0">
           <div className="sticky top-28">
-            <p className="text-xl text-gray-200 mb-4 ml-4">Lesson contents</p>
+            <p className="text-xl text-gray-200 mb-4">Lesson contents</p>
             <LessonNavigator sections={sections} />
           </div>
         </aside>
