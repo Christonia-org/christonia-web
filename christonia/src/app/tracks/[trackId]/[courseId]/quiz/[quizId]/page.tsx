@@ -12,11 +12,8 @@ interface QuizPageProps {
 }
 
 export default async function QuizPage({ params }: QuizPageProps) {
-  // 1. Fetch Question Data from DB (Mock for now)
   const quizData = getQuiz();
 
-  // 2. Fetch Markdown Content (Intro/Conclusion) from S3/Filesystem
-  // We use the quizId to find the specific .md file
   const filePath = path.join(
     process.cwd(),
     "content",

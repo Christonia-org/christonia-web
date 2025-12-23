@@ -22,16 +22,12 @@ export default function QuizClient({
   const router = useRouter();
 
   const handleViewCourse = () => {
-    // Splits the path and removes the last two segments (/lesson/lesson-id)
     const coursePath = pathname.split("/").slice(0, -2).join("/");
     router.push(coursePath);
   };
 
-  // --- NEW RESTART LOGIC ---
   const handleRestart = () => {
-    // 1. Clear all inputs
     setAnswers({});
-    // 2. Scroll to the top of the page smoothly
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
