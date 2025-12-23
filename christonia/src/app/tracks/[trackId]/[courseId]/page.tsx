@@ -10,8 +10,8 @@ interface CoursePageProps {
   };
 }
 
-export default function CoursePage({ params }: CoursePageProps) {
-  const { courseId } = params;
+export default async function CoursePage({ params }: CoursePageProps) {
+  const { courseId, trackId } = await params;
   const course = getCourseById(courseId)!;
 
   return (
@@ -42,7 +42,12 @@ export default function CoursePage({ params }: CoursePageProps) {
 
         <div className="w-full flex flex-col gap-4 mb-8">
           {course.modules.map((module) => (
-            <ModuleComponent key={module.id} module={module} />
+            <ModuleComponent
+              key={module.id}
+              module={module}
+              trackId={trackId}
+              courseId={courseId}
+            />
           ))}
         </div>
       </div>

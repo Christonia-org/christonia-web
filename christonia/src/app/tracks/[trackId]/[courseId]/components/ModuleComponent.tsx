@@ -15,9 +15,15 @@ interface ModuleComponentProps {
     name: string;
     items: ModuleItemData[];
   };
+  trackId: string;
+  courseId: string;
 }
 
-export default function ModuleComponent({ module }: ModuleComponentProps) {
+export default function ModuleComponent({
+  module,
+  trackId,
+  courseId,
+}: ModuleComponentProps) {
   return (
     <div className="flex flex-col bg-[#2f3f54] text-white w-full border border-gray-600 rounded-xl overflow-hidden my-4 shadow-sm">
       <div className="px-6 md:px-8 py-4 border-b border-gray-600 bg-[#2b3a4d]">
@@ -37,9 +43,9 @@ export default function ModuleComponent({ module }: ModuleComponentProps) {
             >
               <ModuleItem
                 title={item.title}
-                link={item.link}
+                link={`/tracks/${trackId}/${courseId}/${item.type}/${item.link}`}
                 type={item.type}
-                isComplete={false} // Placeholder for progress logic
+                isComplete={false} // Placeholder
               />
             </div>
           );
