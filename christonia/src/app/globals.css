@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 @theme {
   --color-background: #17223d;
   --color-brand-teal: oklch(60% 0.118 184.704);
