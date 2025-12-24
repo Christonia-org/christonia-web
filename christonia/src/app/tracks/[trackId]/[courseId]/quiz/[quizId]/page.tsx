@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import QuizClient from "./components/QuizClient";
-import getQuiz from "@/lib/mock/mock-quiz"; // Adjust path to your mock data
+import getQuiz from "@/lib/mock/mock-quiz";
 
 interface QuizPageProps {
   params: {
@@ -14,11 +14,9 @@ interface QuizPageProps {
 export default async function QuizPage({ params }: QuizPageProps) {
   const quizData = getQuiz();
 
-  const filePath = path.join(
-    process.cwd(),
-    "content",
-    `${await params.quizId}.md`
-  );
+  const { quizId } = await params;
+
+  const filePath = path.join(process.cwd(), "content", `${quizId}.md`);
   const fallbackFilePath = path.join(process.cwd(), "content", `test-quiz.md`);
 
   let markdownContent = "";
