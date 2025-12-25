@@ -7,8 +7,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import LessonNavigator from "../../../lesson/[lessonId]/components/LessonNavigator";
 import QuizQuestion from "./QuizQuestion";
-import QuizResultCard from "./QuizResultCard"; // Ensure you create this component
-import QuizSummary from "./QuizSummary"; // Ensure you create this component
+import QuizResultCard from "./QuizResultCard";
+import QuizSummary from "./QuizSummary";
 import { BookOpen, Send, RotateCcw, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import DefaultLogo from "../../../../../../../../public/default-course-logo.svg";
@@ -33,11 +33,8 @@ export default function QuizClient({
   };
 
   const handleSubmit = async () => {
-    // We'll allow submission even if some are skipped,
-    // but the QuizResultCard will show a warning for those.
     setIsSubmitting(true);
     try {
-      // Passing questions to the action so it knows the correct answers
       const result = await submitQuizAction(quiz.id, quiz.questions, answers);
       if (result.success) {
         setResultData(result);
@@ -106,7 +103,6 @@ export default function QuizClient({
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="flex-1 min-w-0">
           {!resultData ? (
-            /* --- QUIZ TAKING VIEW --- */
             <>
               <article className="prose prose-invert prose-lg max-w-none prose-h2:scroll-mt-24 prose-p:mt-0">
                 <div id="introduction" className="scroll-mt-24">
@@ -171,7 +167,6 @@ export default function QuizClient({
               </div>
             </>
           ) : (
-            /* --- QUIZ RESULTS VIEW --- */
             <div className="animate-in fade-in duration-700">
               <QuizSummary
                 score={resultData.score}
@@ -198,7 +193,6 @@ export default function QuizClient({
                 ))}
               </div>
 
-              {/* Final Footer Actions */}
               <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-6 w-full">
                 <button
                   className="flex items-center justify-center gap-2 px-6 py-3 bg-[#1e2a4a] border border-gray-600 rounded-lg hover:bg-gray-700 transition-colors text-base font-bold min-w-[160px]"
@@ -222,7 +216,6 @@ export default function QuizClient({
           )}
         </div>
 
-        {/* Navigator: Hidden in results view to match screenshot */}
         {!resultData && (
           <aside className="hidden lg:block w-64 shrink-0">
             <div className="sticky top-28">

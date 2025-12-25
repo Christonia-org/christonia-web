@@ -34,7 +34,9 @@ export default function QuizSummary({
   return (
     <div className="bg-[#1e2a4a] border border-gray-700 rounded-3xl p-12 text-center my-12 shadow-2xl">
       <h2 className="text-4xl font-bold text-white mb-4">You Scored</h2>
-      <div className={`text-8xl font-black mb-8 ${feedback.color}`}>
+      <div
+        className={`text-6xl md:text-8xl font-black mb-8 whitespace-nowrap ${feedback.color}`}
+      >
         {correctCount} / {totalQuestions}
       </div>
       <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
