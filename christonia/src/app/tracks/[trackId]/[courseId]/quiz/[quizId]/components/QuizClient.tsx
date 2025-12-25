@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { submitQuizAction } from "../actions";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import LessonNavigator from "../../../lesson/[lessonId]/components/LessonNavigator";
+import LessonNavigator from "../../../../../../../components/LessonNavigator";
 import QuizQuestion from "./QuizQuestion";
 import QuizResultCard from "./QuizResultCard";
 import QuizSummary from "./QuizSummary";

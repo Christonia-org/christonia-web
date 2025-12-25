@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import LessonNavigator from "./LessonNavigator";
+import LessonNavigator from "../../../../../../../components/LessonNavigator";
 import { BookOpen, CheckCircle, ChevronRight } from "lucide-react";
 import DefaultLogo from "../../../../../../../../public/default-course-logo.svg";
 
