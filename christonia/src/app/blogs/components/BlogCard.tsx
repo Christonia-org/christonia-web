@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { Share2, AlertTriangle, Bookmark, Check } from "lucide-react";
 
 interface BlogCardProps {
+  id: number | string;
   title: string;
   author: string;
   datePublished: string;
@@ -10,9 +12,11 @@ interface BlogCardProps {
   likes: number;
   isBookmarked: boolean;
   description: string;
+  onReport: (id: string | number, title: string) => void;
 }
 
 export default function BlogCard({
+  id,
   title,
   author,
   datePublished,
@@ -20,72 +24,101 @@ export default function BlogCard({
   likes,
   isBookmarked,
   description,
+  onReport,
 }: BlogCardProps) {
   const [bookmarkedStatus, setBookmarkedStatus] = useState(isBookmarked);
+  const [showReportModal, setShowReportModal] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
-  const handleBookmarkClick = () => {
-    setBookmarkedStatus((prevStatus) => !prevStatus);
+  const handleBookmarkClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setBookmarkedStatus((prev) => !prev);
+  };
+
+  const handleShare = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const url = `${window.location.origin}/blogs/${id}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy link");
+    }
   };
 
   return (
-    <div
-      className="relative w-full max-w-[300px] h-[400px] bg-[#2F3F54] text-white rounded-lg shadow-xl p-6 pt-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl overflow-hidden text-left group
-      before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:height-[10px] before:bg-brand-gold before:z-10"
-    >
-      {/* Bookmark Icon */}
-      <button
-        onClick={handleBookmarkClick}
-        className={`absolute top-6 right-4 cursor-pointer transition-colors duration-200 z-20 ${
-          bookmarkedStatus ? "text-white" : "text-[#a3a3a3] hover:text-white"
-        }`}
-        aria-label="Toggle Bookmark"
+    <>
+      <div
+        className="relative w-full max-w-[300px] h-[400px] bg-[#2F3F54] text-white rounded-lg shadow-xl p-6 pt-12 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl overflow-hidden text-left group
+      before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[8px] before:bg-brand-gold before:z-10"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill={bookmarkedStatus ? "currentColor" : "none"}
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-          {bookmarkedStatus && <path d="M9 10l2 2l4-4" stroke="#2F3F54"></path>}
-        </svg>
-      </button>
+        <div className="absolute top-6 right-4 flex gap-3 z-20">
+          <button
+            onClick={handleBookmarkClick}
+            className={`transition-colors duration-200 ${
+              bookmarkedStatus
+                ? "text-white"
+                : "text-[#a3a3a3] hover:text-white"
+            }`}
+          >
+            <Bookmark
+              size={22}
+              fill={bookmarkedStatus ? "currentColor" : "none"}
+            />
+          </button>
 
-      {/* Content Area */}
-      <div className="flex-1 flex flex-col">
-        <h2 className="text-2xl font-bold leading-tight mb-3 pr-8 line-clamp-2">
-          {title}
-        </h2>
+          <button
+            onClick={handleShare}
+            className="text-[#a3a3a3] hover:text-brand-teal transition-colors duration-200"
+            title="Share Link"
+          >
+            {isCopied ? (
+              <Check size={20} className="text-brand-teal" />
+            ) : (
+              <Share2 size={20} />
+            )}
+          </button>
 
-        {/* Meta Data */}
-        <div className="flex flex-col gap-1 text-sm text-[#a3a3a3] font-medium mb-4">
-          <p>
-            by <span className="text-white font-semibold">{author}</span>
-          </p>
-          <p>
-            <span className="text-white">{datePublished}</span>
-            {dateEdited && <span> (Edited on {dateEdited})</span>}
-          </p>
-          <p>
-            <span className="text-white font-semibold">{likes}</span> Likes
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onReport(id, title);
+            }}
+            className="text-[#a3a3a3] hover:text-red-400 transition-colors"
+            title="Report Blog"
+          >
+            <AlertTriangle size={20} />
+          </button>
+        </div>
+
+        <div className="flex-1 flex flex-col mt-2">
+          <h2 className="text-2xl font-bold leading-tight mb-3 pr-8 line-clamp-2">
+            {title}
+          </h2>
+
+          <div className="flex flex-col gap-1 text-sm text-[#a3a3a3] font-medium mb-4">
+            <p>
+              by <span className="text-white font-semibold">{author}</span>
+            </p>
+            <p>
+              <span className="text-white">{datePublished}</span>
+              {dateEdited && <span> (Edited on {dateEdited})</span>}
+            </p>
+            <p>
+              <span className="text-white font-semibold">{likes}</span> Likes
+            </p>
+          </div>
+
+          <p className="text-gray-300 text-base leading-relaxed line-clamp-4">
+            {description}
           </p>
         </div>
 
-        {/* Description */}
-        <p className="text-gray-300 text-base leading-relaxed line-clamp-4">
-          {description}
-        </p>
+        <button className="bg-brand-teal text-white text-base font-medium px-6 py-3 rounded-lg shadow-md transition-colors duration-200 hover:bg-brand-teal-dark active:scale-95 self-center mt-4">
+          Read Now
+        </button>
       </div>
-
-      {/* Read Now Button */}
-      <button className="bg-brand-teal text-white text-base font-medium px-6 py-3 rounded-lg shadow-md transition-colors duration-200 hover:bg-brand-teal-dark active:scale-95 self-center mt-4">
-        Read Now
-      </button>
-    </div>
+    </>
   );
 }
