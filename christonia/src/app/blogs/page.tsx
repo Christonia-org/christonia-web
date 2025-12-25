@@ -3,7 +3,7 @@
 import { useState } from "react";
 import BookmarkedBlogsSection from "./components/BookmarkedBlogsSection";
 import BlogsSection from "./components/BlogsSection";
-import ReportModal from "./components/ReportModal";
+import ReportModal from "../../components/ReportModal";
 
 export default function BlogsPage() {
   const [reportingBlog, setReportingBlog] = useState<{
