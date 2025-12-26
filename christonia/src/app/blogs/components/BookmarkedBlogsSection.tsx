@@ -1,6 +1,10 @@
 import BlogCard from "./BlogCard";
 
-export default function BookmarkedBlogsSection() {
+export default function BookmarkedBlogsSection({
+  onReport,
+}: {
+  onReport: (id: number | string, title: string) => void;
+}) {
   const blogData = [
     {
       id: 1,
@@ -80,6 +84,7 @@ export default function BookmarkedBlogsSection() {
         {blogData.map((blog) => (
           <BlogCard
             key={blog.id}
+            id={blog.id}
             title={blog.title}
             author={blog.author}
             datePublished={blog.datePublished}
@@ -87,6 +92,7 @@ export default function BookmarkedBlogsSection() {
             likes={blog.likes}
             isBookmarked={blog.isBookmarked}
             description={blog.description}
+            onReport={onReport}
           />
         ))}
       </div>

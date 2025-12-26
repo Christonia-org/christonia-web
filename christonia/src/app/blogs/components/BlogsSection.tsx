@@ -1,7 +1,11 @@
 import Image from "next/image";
 import BlogCard from "./BlogCard";
 
-export default function BlogsSection() {
+export default function BlogsSection({
+  onReport,
+}: {
+  onReport: (id: number | string, title: string) => void;
+}) {
   const blogData = [
     {
       id: 1,
@@ -96,6 +100,7 @@ export default function BlogsSection() {
         {blogData.map((blog) => (
           <BlogCard
             key={blog.id}
+            id={blog.id}
             title={blog.title}
             author={blog.author}
             datePublished={blog.datePublished}
@@ -103,6 +108,7 @@ export default function BlogsSection() {
             likes={blog.likes}
             isBookmarked={blog.isBookmarked}
             description={blog.description}
+            onReport={onReport}
           />
         ))}
       </div>

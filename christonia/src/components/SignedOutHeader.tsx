@@ -11,6 +11,7 @@ export default function SignedOutHeader() {
     { name: "About", href: "/about" },
     { name: "Glossary", href: "/glossary" },
     { name: "Support us", href: "/support-us" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Sign in", href: "/sign-in" },
   ];
 
