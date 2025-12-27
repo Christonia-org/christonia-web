@@ -27,8 +27,6 @@ export default function CreateBlogCard() {
           </p>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 w-full h-1.5 bg-brand-teal translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
     </Link>
   );
 }
