@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BlogCard from "./BlogCard";
+import CreateBlogCard from "./CreateBlogCard";
 
 export default function BlogsSection({
   onReport,
@@ -97,6 +98,8 @@ export default function BlogsSection({
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 w-full max-w-[1200px] mb-12 justify-items-center">
+        <CreateBlogCard />
+
         {blogData.map((blog) => (
           <BlogCard
             key={blog.id}

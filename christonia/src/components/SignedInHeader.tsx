@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { PenLine } from "lucide-react";
 
 interface SignedInHeaderProps {
   userProfilePicUrl?: string;
@@ -82,6 +83,16 @@ export default function SignedInHeader({
 
             {isProfileOpen && (
               <div className="absolute right-0 mt-3 w-56 bg-[#1e2a4a] border border-gray-600 rounded-lg shadow-xl py-2 overflow-hidden animate-in fade-in zoom-in duration-200">
+                <Link
+                  href="/blogs/write"
+                  className="flex items-center gap-3 px-4 py-3 text-sm text-brand-teal hover:bg-white/10 transition-colors no-underline font-bold"
+                  onClick={() => setIsProfileOpen(false)}
+                >
+                  <PenLine size={18} />
+                  Write a Blog
+                </Link>
+                <hr className="border-gray-600 my-1" />
+
                 <Link
                   href="/profile/user-info"
                   className="flex items-center px-4 py-3 text-sm text-gray-200 hover:bg-white/10 hover:text-white transition-colors no-underline"
