@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import BlogMetadataForm from "./components/BlogMetadataForm";
 import BlogWriterCore from "./components/BlogWriterCore";
 import BlogWriterActions from "./components/BlogWriterActions";
+import SupportUsSection from "@/components/SupportUsSection";
 
 export default function BlogWriterPage() {
   const [metadata, setMetadata] = useState({
@@ -70,6 +71,8 @@ export default function BlogWriterPage() {
 
         <BlogWriterActions markdown={markdown} />
       </div>
+
+      <SupportUsSection />
     </main>
   );
 }
