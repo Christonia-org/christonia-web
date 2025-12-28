@@ -1,3 +1,9 @@
+:::metadata
+title: The Cosmological Argument
+description: A philosophical defense of the First Cause, optimized for modern readers.
+tags: Apologetics, Philosophy, Faith
+:::
+
 ## Overview
 
 In this module, we explored the historical reliability of the New Testament. Now, it is time to put that knowledge into practice.
