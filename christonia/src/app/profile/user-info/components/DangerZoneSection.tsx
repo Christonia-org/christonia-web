@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import { RefreshCw, Trash2 } from "lucide-react";
 
 export default function DangerZoneSection() {
   return (
@@ -11,12 +13,7 @@ export default function DangerZoneSection() {
       <div className="flex flex-col gap-4">
         <button className="group flex items-center gap-4 w-full sm:w-[220px] p-3 border border-gray-600 rounded-lg bg-transparent transition-all duration-200 hover:bg-[oklch(37.3%_0.034_259.733)] hover:border-gray-400 active:scale-95">
           <div className="shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
-            <Image
-              src="/repeat-icon.svg"
-              alt="Reset Progress Icon"
-              width={25}
-              height={25}
-            />
+            <RefreshCw size={25} />
           </div>
           <span className="text-base font-medium text-left">
             Reset Progress
@@ -24,13 +21,8 @@ export default function DangerZoneSection() {
         </button>
 
         <button className="group flex items-center gap-4 w-full sm:w-[220px] p-3 border border-gray-600 rounded-lg bg-transparent transition-all duration-200 hover:bg-red-950/30 hover:border-red-500/50 active:scale-95">
-          <div className="shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
-            <Image
-              src="/trash-icon.svg"
-              alt="Delete Account Icon"
-              width={25}
-              height={25}
-            />
+          <div className="shrink-0 opacity-80 group-hover:opacity-100 transition-opacity text-red-500">
+            <Trash2 size={25} />
           </div>
           <span className="text-base font-medium text-left text-red-500 group-hover:text-red-400 transition-colors">
             Delete Account
