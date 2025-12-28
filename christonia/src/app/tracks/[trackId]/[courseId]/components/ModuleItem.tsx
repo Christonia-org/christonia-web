@@ -22,7 +22,7 @@ export default function ModuleItem({
   const typeIcons: Record<string, string> = {
     lesson: "/lesson-icon.svg",
     quiz: "/quiz-icon.svg",
-    "blog-assignment": "/blog-assignment-icon.svg",
+    assignment: "/blog-assignment-icon.svg",
   };
 
   const statusIcon = complete
