@@ -53,7 +53,7 @@ export default function AssignmentContent({
             {parsedMetadata.title}
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 font-medium leading-tight">
-            Assignment Submission
+            Course Name
           </p>
         </div>
       </div>
