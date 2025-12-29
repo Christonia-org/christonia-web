@@ -2,21 +2,17 @@ import fs from "fs";
 import path from "path";
 import BlogClientWrapper from "./components/BlogClientWrapper";
 
-export default async function BlogPage({
-  params,
-}: {
-  params: { blogId: string };
-}) {
-  const { blogId } = await params;
+interface BlogPageProps {
+  params: Promise<{ blogId: string }>;
+}
 
-  // COMMENT: Logic to query S3 would go here.
-  // const blogContent = await fetchFromS3(`blogs/${blogId}.md`);
+export default async function BlogPage({ params }: BlogPageProps) {
+  const { blogId } = await params;
 
   // TEMPORARY: Reading from local test-blog.md
   const filePath = path.join(process.cwd(), "content", "test-blog.md");
   const content = fs.readFileSync(filePath, "utf8");
 
-  // MOCK DATA: In production, you'd parse "frontmatter" from the .md file for this
   const blogData = {
     id: blogId,
     title: "The Historical Reliability of the New Testament",
