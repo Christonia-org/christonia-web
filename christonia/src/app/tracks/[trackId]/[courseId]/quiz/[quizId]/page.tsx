@@ -4,11 +4,11 @@ import QuizClient from "./components/QuizClient";
 import getQuiz from "@/lib/mock/mock-quiz";
 
 interface QuizPageProps {
-  params: {
+  params: Promise<{
     trackId: string;
     courseId: string;
     quizId: string;
-  };
+  }>;
 }
 
 export default async function QuizPage({ params }: QuizPageProps) {

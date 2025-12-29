@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutSection() {
   const expectations = [
     {
@@ -55,7 +57,7 @@ export default function AboutSection() {
             key={index}
             className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-10 text-center md:text-left max-w-full md:max-w-[85%]"
           >
-            <img
+            <Image
               src={item.img}
               alt={`${item.title} Icon`}
               className="w-12 h-12 md:w-[90px] md:h-auto shrink-0"

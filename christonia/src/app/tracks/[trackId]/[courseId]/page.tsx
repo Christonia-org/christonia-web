@@ -4,10 +4,10 @@ import Image from "next/image";
 import SupportUsSection from "@/components/SupportUsSection";
 
 interface CoursePageProps {
-  params: {
+  params: Promise<{
     trackId: string;
     courseId: string;
-  };
+  }>;
 }
 
 export default async function CoursePage({ params }: CoursePageProps) {

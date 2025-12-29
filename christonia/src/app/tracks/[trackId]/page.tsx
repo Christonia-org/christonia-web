@@ -5,9 +5,9 @@ import CourseCard from "./components/CourseCard";
 import SupportUsSection from "@/components/SupportUsSection";
 
 interface TrackCoursesPageProps {
-  params: {
+  params: Promise<{
     trackId: string;
-  };
+  }>;
 }
 
 export default async function TrackCoursesPage({
@@ -26,7 +26,7 @@ export default async function TrackCoursesPage({
     <>
       <div className="flex flex-col gap-8 px-6 py-8 md:px-24 md:py-12 text-white min-h-screen font-sans max-w-[1400px] mx-auto">
         <header className="flex flex-col gap-4 w-full">
-          <h1 className="text-4xl md:text-5xl font-bold m-0">
+          <h1 className="text-4xl md:text-5xl font-bold m-0 uppercase italic tracking-tighter">
             The {track.name} Track
           </h1>
           <p className="text-lg md:text-xl text-gray-400 leading-relaxed m-0 w-full">

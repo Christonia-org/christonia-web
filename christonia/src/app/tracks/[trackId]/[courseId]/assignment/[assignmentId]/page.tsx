@@ -3,11 +3,15 @@ import path from "path";
 import AssignmentContent from "./components/AssignmentContent";
 import SupportUsSection from "@/components/SupportUsSection";
 
-export default async function AssignmentPage({
-  params,
-}: {
-  params: { assignmentId: string };
-}) {
+interface AssignmentPageProps {
+  params: Promise<{
+    trackId: string;
+    courseId: string;
+    assignmentId: string;
+  }>;
+}
+
+export default async function AssignmentPage({ params }: AssignmentPageProps) {
   const { assignmentId } = await params;
 
   const filePath = path.join(process.cwd(), "content", `${assignmentId}.md`);
