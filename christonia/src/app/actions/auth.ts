@@ -113,3 +113,10 @@ export async function updatePasswordAction(prevState: any, formData: FormData) {
   // Password updated! Send them to sign in or home.
   redirect("/sign-in?message=Password updated successfully");
 }
+
+export async function signOutAction() {
+  const supabase = await createClient();
+  await supabase.auth.signOut();
+  revalidatePath("/", "layout"); // Clears the cache so the header updates immediately
+  redirect("/");
+}
