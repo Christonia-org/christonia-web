@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { signInAction } from "@/app/actions/auth";
+import { signInAction, signInWithGoogle } from "@/app/actions/auth";
 import Link from "next/link";
 
 export default function SignInForm() {
@@ -133,8 +133,10 @@ export default function SignInForm() {
       </div>
 
       <button
-        type="button"
-        disabled={isPending}
+        type="button" // Important: prevents the main form from submitting
+        onClick={async () => {
+          await signInWithGoogle();
+        }}
         className="bg-[#17223D] border border-[#4a5a75] rounded-md py-2 flex justify-center items-center transition-all hover:bg-white/5 active:scale-[0.98] disabled:opacity-50"
       >
         <img src="/google-logo.svg" alt="Google logo" className="w-10 h-auto" />

@@ -51,3 +51,27 @@ export async function signInAction(prevState: any, formData: FormData) {
   // Redirect to the home page or dashboard after successful login
   redirect("/");
 }
+
+export async function signInWithGoogle() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      // This is where Google sends them after they pick an account
+      redirectTo: `${
+        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+      }/auth/callback`,
+    },
+  });
+
+  if (error) {
+    console.error("Google Auth Error:", error.message);
+    return redirect("/sign-in?error=Could not authenticate with Google");
+  }
+
+  // Send the user to the Google Consent screen
+  if (data.url) {
+    redirect(data.url);
+  }
+}
