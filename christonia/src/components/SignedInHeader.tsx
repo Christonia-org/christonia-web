@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PenLine } from "lucide-react";
+import { signOutAction } from "@/app/actions/auth";
 
 interface SignedInHeaderProps {
   userProfilePicUrl?: string;
@@ -110,8 +111,8 @@ export default function SignedInHeader({
                 <hr className="border-gray-600 my-1" />
                 <button
                   className="w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 transition-colors"
-                  onClick={() => {
-                    /* Sign out logic */
+                  onClick={async () => {
+                    await signOutAction();
                   }}
                 >
                   Sign Out
@@ -192,7 +193,10 @@ export default function SignedInHeader({
             </Link>
             <button
               className="text-left text-red-400 text-base"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={async () => {
+                setIsMenuOpen(false);
+                await signOutAction();
+              }}
             >
               Sign Out
             </button>

@@ -1,0 +1,122 @@
+"use server";
+
+import { createClient } from "@/lib/utils/supabase/server";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
+// 1. Add prevState as the first argument
+export async function signUpAction(prevState: any, formData: FormData) {
+  const supabase = await createClient();
+
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+  const passwordConfirmation = formData.get("passwordConfirmation") as string;
+  const username = formData.get("username") as string;
+
+  if (password !== passwordConfirmation) {
+    return { error: "Passwords do not match" };
+  }
+
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        username: username, // Change 'display_name' to 'username'
+      },
+      emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+    },
+  });
+
+  if (error) return { error: error.message };
+
+  return { success: "Confirmation email sent! Please check your inbox." };
+}
+
+export async function signInAction(prevState: any, formData: FormData) {
+  const supabase = await createClient();
+
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    return { error: error.message };
+  }
+
+  // Redirect to the home page or dashboard after successful login
+  redirect("/");
+}
+
+export async function signInWithGoogle() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      // This is where Google sends them after they pick an account
+      redirectTo: `${
+        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+      }/auth/callback`,
+    },
+  });
+
+  if (error) {
+    console.error("Google Auth Error:", error.message);
+    return redirect("/sign-in?error=Could not authenticate with Google");
+  }
+
+  // Send the user to the Google Consent screen
+  if (data.url) {
+    redirect(data.url);
+  }
+}
+
+export async function forgotPasswordAction(prevState: any, formData: FormData) {
+  const supabase = await createClient();
+  const email = formData.get("email") as string;
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${
+      process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+    }/reset-password`,
+  });
+
+  if (error) {
+    return { error: error.message };
+  }
+
+  return { success: "Check your email for the password reset link!" };
+}
+
+export async function updatePasswordAction(prevState: any, formData: FormData) {
+  const supabase = await createClient();
+  const password = formData.get("password") as string;
+  const passwordConfirmation = formData.get("passwordConfirmation") as string;
+
+  if (password !== passwordConfirmation) {
+    return { error: "Passwords do not match" };
+  }
+
+  const { error } = await supabase.auth.updateUser({
+    password: password,
+  });
+
+  if (error) {
+    return { error: error.message };
+  }
+
+  // Password updated! Send them to sign in or home.
+  redirect("/sign-in?message=Password updated successfully");
+}
+
+export async function signOutAction() {
+  const supabase = await createClient();
+  await supabase.auth.signOut();
+  revalidatePath("/", "layout"); // Clears the cache so the header updates immediately
+  redirect("/");
+}
