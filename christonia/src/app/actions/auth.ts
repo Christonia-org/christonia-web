@@ -2,6 +2,7 @@
 
 import { createClient } from "@/lib/utils/supabase/server";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 // 1. Add prevState as the first argument
 export async function signUpAction(prevState: any, formData: FormData) {
@@ -32,7 +33,6 @@ export async function signUpAction(prevState: any, formData: FormData) {
   return { success: "Confirmation email sent! Please check your inbox." };
 }
 
-// 2. Do the same for signInAction if you're using it with useActionState
 export async function signInAction(prevState: any, formData: FormData) {
   const supabase = await createClient();
 
@@ -44,8 +44,10 @@ export async function signInAction(prevState: any, formData: FormData) {
     password,
   });
 
-  if (error) return { error: error.message };
+  if (error) {
+    return { error: error.message };
+  }
 
-  // Note: redirect() shouldn't be inside a try/catch if you had one,
-  // and it works fine within Server Actions.
+  // Redirect to the home page or dashboard after successful login
+  redirect("/");
 }
