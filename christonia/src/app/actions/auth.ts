@@ -75,3 +75,41 @@ export async function signInWithGoogle() {
     redirect(data.url);
   }
 }
+
+export async function forgotPasswordAction(prevState: any, formData: FormData) {
+  const supabase = await createClient();
+  const email = formData.get("email") as string;
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${
+      process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+    }/reset-password`,
+  });
+
+  if (error) {
+    return { error: error.message };
+  }
+
+  return { success: "Check your email for the password reset link!" };
+}
+
+export async function updatePasswordAction(prevState: any, formData: FormData) {
+  const supabase = await createClient();
+  const password = formData.get("password") as string;
+  const passwordConfirmation = formData.get("passwordConfirmation") as string;
+
+  if (password !== passwordConfirmation) {
+    return { error: "Passwords do not match" };
+  }
+
+  const { error } = await supabase.auth.updateUser({
+    password: password,
+  });
+
+  if (error) {
+    return { error: error.message };
+  }
+
+  // Password updated! Send them to sign in or home.
+  redirect("/sign-in?message=Password updated successfully");
+}
