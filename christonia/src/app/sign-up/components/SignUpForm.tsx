@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { signUpAction } from "@/app/actions/auth";
+import { signUpAction, signInWithGoogle } from "@/app/actions/auth";
 
 export default function SignUpForm() {
   // state: the return value from the action ({ error?: string, success?: string })
@@ -138,8 +138,9 @@ export default function SignUpForm() {
       </div>
 
       <button
-        type="button"
+        type="button" // This is vital so it doesn't trigger the main form action
         disabled={isPending}
+        onClick={async () => await signInWithGoogle()}
         className="bg-[#17223D] border border-[#4a5a75] rounded-md py-2 flex justify-center items-center transition-all hover:bg-white/5 active:scale-[0.98] disabled:opacity-50"
       >
         <img src="/google-logo.svg" alt="Google logo" className="w-10 h-auto" />
