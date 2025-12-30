@@ -5,7 +5,7 @@ import SignUpForm from "./components/SignUpForm";
 export default function SignUpPage() {
   return (
     <>
-      <section className="bg-background flex flex-col items-center justify-center px-6 py-12 md:py-20 border-t-2 border-[#8E8E8E]">
+      <section className="bg-background flex flex-col items-center justify-center px-6 py-12 md:py-20">
         <h1 className="text-white text-3xl md:text-4xl font-bold mb-2 text-center">
           Sign up for free
         </h1>

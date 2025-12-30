@@ -5,7 +5,7 @@ import SignInForm from "./components/SignInForm";
 export default function SignInPage() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center px-6 py-12 md:py-20 border-t-2 border-[#8E8E8E] bg-background">
+      <section className="flex flex-col items-center justify-center px-6 py-12 md:py-20 bg-background">
         <h1 className="text-white text-3xl md:text-4xl font-bold mb-2 text-center">
           Sign in to your account
         </h1>
